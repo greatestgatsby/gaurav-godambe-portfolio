@@ -42,8 +42,8 @@ const HeroSection = ({ className }: HeroSectionProps) => {
           <div className="order-1 lg:order-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <div className="aspect-[4/5] bg-navy-200 rounded-2xl relative overflow-hidden">
-                <img 
-                  src="/lovable-uploads/369428be-c4b0-493f-9eae-69d2e04118fd.png"
+                <img
+                  src="/lovable-uploads/a9dc63a9-5d11-466c-ad97-15a63e48b8ea.png"
                   alt="Professional portrait of Gaurav Godambe"
                   className="object-cover w-full h-full absolute inset-0"
                 />
