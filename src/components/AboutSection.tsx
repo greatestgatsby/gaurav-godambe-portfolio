@@ -47,21 +47,21 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
       author: "Jason Chan, CFA",
       position: "Fund and Corporate Service Solutions",
       company: "MSCI",
-      avatarUrl: "/lovable-uploads/b411bf60-bd91-4057-8c9b-482fd48ef894.png#chan",
+      avatarUrl: "/lovable-uploads/b4de7b70-5781-4c7b-adf9-dfbca5d9752e.png",
     },
     {
       quote: `I highly recommend my colleague Gaurav for his exceptional ability to identify insightful trends and address gaps through his expertise in creating effective dashboards. His analytical skills and strategic mindset significantly contribute to our team's success. A valuable asset for any multinational organisation.`,
       author: "Vivek Agarwalla, CFA",
       position: "Executive Director - Portfolio & Risk Management Analytics",
       company: "MSCI",
-      avatarUrl: "/lovable-uploads/b411bf60-bd91-4057-8c9b-482fd48ef894.png#agarwalla",
+      avatarUrl: "/lovable-uploads/f61926d8-11b7-4f1e-a8d4-233df1e41e03.png",
     },
     {
       quote: `Highly professional and efficient. One of those who get things done ✅.`,
       author: "Sean Kim",
       position: "APAC Lead of Index Structured Products",
       company: "MSCI",
-      avatarUrl: "/lovable-uploads/b411bf60-bd91-4057-8c9b-482fd48ef894.png#kim",
+      avatarUrl: "/lovable-uploads/cbf06246-48b1-48e2-a308-54922c95f8a4.png",
     },
   ];
 
