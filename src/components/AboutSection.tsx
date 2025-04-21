@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -38,7 +37,6 @@ const AboutSection = ({ className, fullPage = false }: AboutSectionProps) => {
     ],
   };
 
-  // ==== TESTIMONIALS ARRAY FROM IMAGE ====
   const testimonials = [
     {
       quote: `I have the pleasure of working closely with Gaurav during his tenure as the regional CFO at MSCI, where he demonstrated exceptional leadership and financial expertise. Gaurav's innovative approach to budget planning played a pivotal role in driving financial success across different product lines in the Asia Pacific region.
@@ -49,21 +47,21 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
       author: "Jason Chan, CFA",
       position: "Fund and Corporate Service Solutions",
       company: "MSCI",
-      avatarUrl: "/lovable-uploads/9b671b16-3e2d-420f-b0c9-a1b52559ebc9.png#xywh=10,14,48,48",
+      avatarUrl: "/lovable-uploads/9b671b16-3e2d-420f-b0c9-a1b52559ebc9.png",
     },
     {
       quote: `I highly recommend my colleague Gaurav for his exceptional ability to identify insightful trends and address gaps through his expertise in creating effective dashboards. His analytical skills and strategic mindset significantly contribute to our team's success. A valuable asset for any multinational organisation.`,
       author: "Vivek Agarwalla, CFA",
       position: "Executive Director - Portfolio & Risk Management Analytics",
       company: "MSCI",
-      avatarUrl: "/lovable-uploads/9b671b16-3e2d-420f-b0c9-a1b52559ebc9.png#xywh=16,236,40,40",
+      avatarUrl: "/lovable-uploads/9b671b16-3e2d-420f-b0c9-a1b52559ebc9.png",
     },
     {
       quote: `Highly professional and efficient. One of those who get things done ✅.`,
       author: "Sean Kim",
       position: "APAC Lead of Index Structured Products",
       company: "MSCI",
-      avatarUrl: "/lovable-uploads/9b671b16-3e2d-420f-b0c9-a1b52559ebc9.png#xywh=17,452,41,41",
+      avatarUrl: "/lovable-uploads/9b671b16-3e2d-420f-b0c9-a1b52559ebc9.png",
     },
   ];
 
@@ -222,7 +220,7 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
                 author={t.author}
                 position={t.position}
                 company={t.company}
-                avatarUrl={t.avatarUrl.split("#")[0]}
+                avatarUrl={t.avatarUrl}
                 className="mb-4"
               />
             ))}
@@ -234,4 +232,3 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
 };
 
 export default AboutSection;
-
