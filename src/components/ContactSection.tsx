@@ -125,7 +125,7 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                     <div>
                       <h4 className="font-semibold text-navy-800 mb-1">LinkedIn</h4>
                       <a 
-                        href="https://www.linkedin.com/" 
+                        href="https://www.linkedin.com/in/gaurav-godambe-506b41b/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-navy-600 hover:text-accent transition-colors"
@@ -164,7 +164,7 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                     <h4 className="font-semibold text-navy-800 mb-4">Connect With Me</h4>
                     <div className="flex space-x-4">
                       <a 
-                        href="https://www.linkedin.com/" 
+                        href="https://www.linkedin.com/in/gaurav-godambe-506b41b/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="bg-navy-100 hover:bg-navy-200 text-navy-800 p-3 rounded-full transition-colors"
@@ -201,3 +201,4 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
 };
 
 export default ContactSection;
+
