@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import PortfolioCard from './PortfolioCard';
-import Button from './ui/Button';
+import Button from '@/components/ui/CustomButton';
 
 interface PortfolioSectionProps {
   className?: string;

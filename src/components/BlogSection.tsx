@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
-import Button from './ui/Button';
+import Button from '@/components/ui/CustomButton';
 
 interface BlogSectionProps {
   className?: string;

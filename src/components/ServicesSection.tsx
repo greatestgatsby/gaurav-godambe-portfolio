@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import ServiceCard from './ServiceCard';
-import Button from './ui/Button';
+import Button from '@/components/ui/CustomButton';
 
 interface ServicesSectionProps {
   className?: string;
