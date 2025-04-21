@@ -13,6 +13,8 @@ interface TestimonialCardProps {
   className?: string;
 }
 
+const DEFAULT_AVATAR = "/lovable-uploads/369428be-c4b0-493f-9eae-69d2e04118fd.png";
+
 const TestimonialCard = ({
   quote,
   author,
@@ -27,14 +29,12 @@ const TestimonialCard = ({
         <div className="flex flex-col md:flex-row gap-6 items-center">
           <div className="flex-shrink-0">
             <Avatar className="w-20 h-20 border-2 border-accent bg-black">
-              {avatarUrl ? (
-                <AvatarImage
-                  src={avatarUrl}
-                  alt={author}
-                  className="w-full h-full object-cover bg-black"
-                />
-              ) : null}
-              {/* Removed AvatarFallback with initials */}
+              <AvatarImage
+                src={avatarUrl || DEFAULT_AVATAR}
+                alt={author}
+                className="w-full h-full object-cover bg-black"
+              />
+              {/* AvatarFallback intentionally left out */}
             </Avatar>
           </div>
           <div className="flex-1">
@@ -59,3 +59,4 @@ const TestimonialCard = ({
 };
 
 export default TestimonialCard;
+
