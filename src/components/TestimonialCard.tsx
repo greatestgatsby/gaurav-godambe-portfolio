@@ -28,7 +28,11 @@ const TestimonialCard = ({
           <div className="flex-shrink-0">
             <Avatar className="w-20 h-20 border-2 border-accent">
               {avatarUrl ? (
-                <AvatarImage src={avatarUrl} alt={author} />
+                <AvatarImage
+                  src={avatarUrl}
+                  alt={author}
+                  className="w-full h-full object-cover"
+                />
               ) : null}
               {/* Removed AvatarFallback with initials */}
             </Avatar>
