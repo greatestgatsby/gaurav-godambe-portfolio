@@ -19,7 +19,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://www.linkedin.com/" 
+                href="https://www.linkedin.com/in/gaurav-godambe-506b41b/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white hover:text-accent-light transition-colors"
@@ -102,7 +102,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <Linkedin size={20} className="mr-2 mt-1 flex-shrink-0" />
                 <a 
-                  href="https://www.linkedin.com/" 
+                  href="https://www.linkedin.com/in/gaurav-godambe-506b41b/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-navy-300 hover:text-white transition-colors"
@@ -128,3 +128,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
