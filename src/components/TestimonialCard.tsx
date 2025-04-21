@@ -21,15 +21,6 @@ const TestimonialCard = ({
   avatarUrl,
   className,
 }: TestimonialCardProps) => {
-  // Get initials for the avatar fallback
-  const getInitials = (name: string) => {
-    return name
-      .split(' ')
-      .map(part => part[0])
-      .join('')
-      .toUpperCase();
-  };
-
   return (
     <Card className={cn('overflow-hidden shadow-lg', className)}>
       <CardContent className="p-8">
@@ -39,9 +30,7 @@ const TestimonialCard = ({
               {avatarUrl ? (
                 <AvatarImage src={avatarUrl} alt={author} />
               ) : null}
-              <AvatarFallback className="bg-accent/10 text-accent text-xl">
-                {getInitials(author)}
-              </AvatarFallback>
+              {/* Removed AvatarFallback with initials */}
             </Avatar>
           </div>
           <div className="flex-1">
@@ -66,3 +55,4 @@ const TestimonialCard = ({
 };
 
 export default TestimonialCard;
+
