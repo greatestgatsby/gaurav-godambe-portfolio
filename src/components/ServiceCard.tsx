@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { CheckCircle, ChevronRight, BarChart3, Robot, ClipboardList, LineChart, PresentationChart } from 'lucide-react';
+import { CheckCircle, ChevronRight, BarChart3, Bot, ClipboardList, LineChart, Presentation } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ServiceCardProps {
@@ -24,13 +24,13 @@ const ServiceCard = ({
       case 'chart-bar':
         return <BarChart3 className="h-10 w-10 text-accent" />;
       case 'robot':
-        return <Robot className="h-10 w-10 text-accent" />;
+        return <Bot className="h-10 w-10 text-accent" />; // Changed from Robot to Bot
       case 'clipboard-list':
         return <ClipboardList className="h-10 w-10 text-accent" />;
       case 'chart-line':
         return <LineChart className="h-10 w-10 text-accent" />;
       case 'presentation-chart-bar':
-        return <PresentationChart className="h-10 w-10 text-accent" />;
+        return <Presentation className="h-10 w-10 text-accent" />; // Changed from PresentationChart to Presentation
       default:
         return <BarChart3 className="h-10 w-10 text-accent" />;
     }
