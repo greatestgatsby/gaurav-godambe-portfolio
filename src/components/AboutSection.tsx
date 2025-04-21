@@ -38,10 +38,34 @@ const AboutSection = ({ className, fullPage = false }: AboutSectionProps) => {
     ],
   };
 
-  const testimonial = {
-    quote: "Gaurav is a highly driven and results-oriented leader who delivers measurable transformation with speed and clarity.",
-    author: "Former Manager, MSCI",
-  };
+  // ==== TESTIMONIALS ARRAY FROM IMAGE ====
+  const testimonials = [
+    {
+      quote: `I have the pleasure of working closely with Gaurav during his tenure as the regional CFO at MSCI, where he demonstrated exceptional leadership and financial expertise. Gaurav's innovative approach to budget planning played a pivotal role in driving financial success across different product lines in the Asia Pacific region.
+
+His strong business acumen is evident in every aspect of his work, and he consistently delivers insightful and impactful dashboards that provide valuable sales insights and performance trends. Gaurav's technical background in computing, combined with his meticulous attention to financial details, enables him to make data-driven decisions that have greatly benefited the organization.
+
+I wholeheartedly endorse Gaurav for any leadership role that requires a strategic vision and financial expertise. His dedication, professionalism, and ability to drive results make him an invaluable asset to any team or organization.`,
+      author: "Jason Chan, CFA",
+      position: "Fund and Corporate Service Solutions",
+      company: "MSCI",
+      avatarUrl: "/lovable-uploads/9b671b16-3e2d-420f-b0c9-a1b52559ebc9.png#xywh=10,14,48,48",
+    },
+    {
+      quote: `I highly recommend my colleague Gaurav for his exceptional ability to identify insightful trends and address gaps through his expertise in creating effective dashboards. His analytical skills and strategic mindset significantly contribute to our team's success. A valuable asset for any multinational organisation.`,
+      author: "Vivek Agarwalla, CFA",
+      position: "Executive Director - Portfolio & Risk Management Analytics",
+      company: "MSCI",
+      avatarUrl: "/lovable-uploads/9b671b16-3e2d-420f-b0c9-a1b52559ebc9.png#xywh=16,236,40,40",
+    },
+    {
+      quote: `Highly professional and efficient. One of those who get things done ✅.`,
+      author: "Sean Kim",
+      position: "APAC Lead of Index Structured Products",
+      company: "MSCI",
+      avatarUrl: "/lovable-uploads/9b671b16-3e2d-420f-b0c9-a1b52559ebc9.png#xywh=17,452,41,41",
+    },
+  ];
 
   return (
     <section className={cn('py-16 md:py-24', className)}>
@@ -190,8 +214,18 @@ const AboutSection = ({ className, fullPage = false }: AboutSectionProps) => {
 
         <div className="mt-16">
           <h2 className="text-3xl font-bold text-navy-900 mb-8 text-center">Testimonials</h2>
-          <div className="max-w-3xl mx-auto">
-            <TestimonialCard quote={testimonial.quote} author={testimonial.author} />
+          <div className="max-w-3xl mx-auto grid grid-cols-1 gap-8">
+            {testimonials.map((t, idx) => (
+              <TestimonialCard
+                key={t.author}
+                quote={t.quote}
+                author={t.author}
+                position={t.position}
+                company={t.company}
+                avatarUrl={t.avatarUrl.split("#")[0]}
+                className="mb-4"
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -200,3 +234,4 @@ const AboutSection = ({ className, fullPage = false }: AboutSectionProps) => {
 };
 
 export default AboutSection;
+
