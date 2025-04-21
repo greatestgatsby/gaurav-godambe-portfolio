@@ -26,12 +26,12 @@ const TestimonialCard = ({
       <CardContent className="p-8">
         <div className="flex flex-col md:flex-row gap-6 items-center">
           <div className="flex-shrink-0">
-            <Avatar className="w-20 h-20 border-2 border-accent">
+            <Avatar className="w-20 h-20 border-2 border-accent bg-black">
               {avatarUrl ? (
                 <AvatarImage
                   src={avatarUrl}
                   alt={author}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover bg-black"
                 />
               ) : null}
               {/* Removed AvatarFallback with initials */}
@@ -59,4 +59,3 @@ const TestimonialCard = ({
 };
 
 export default TestimonialCard;
-
