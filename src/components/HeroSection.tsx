@@ -38,7 +38,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <div className="aspect-[4/5] bg-navy-200 rounded-2xl relative overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a"
+                  src="/lovable-uploads/369428be-c4b0-493f-9eae-69d2e04118fd.png"
                   alt="Professional portrait of Gaurav Godambe"
                   className="object-cover w-full h-full absolute inset-0"
                 />
