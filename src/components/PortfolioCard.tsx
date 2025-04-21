@@ -2,7 +2,6 @@
 import React from 'react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface PortfolioCardProps {
@@ -67,15 +66,7 @@ const PortfolioCard = ({
           </div>
         </div>
       </CardContent>
-      <CardFooter className="pt-0">
-        <a
-          href="#"
-          className="text-accent hover:text-accent-dark transition-colors inline-flex items-center text-sm font-medium"
-        >
-          View Project Details
-          <ChevronRight className="ml-1 h-4 w-4" />
-        </a>
-      </CardFooter>
+      {/* Removed CardFooter with "View Project Details" link */}
     </Card>
   );
 };
