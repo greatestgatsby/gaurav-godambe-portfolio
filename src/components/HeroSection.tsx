@@ -29,7 +29,12 @@ const HeroSection = ({ className }: HeroSectionProps) => {
               <Button variant="secondary" href="/contact" icon="arrow">
                 Hire Me
               </Button>
-              <Button variant="outline" href="/resume.pdf" icon="download" download>
+              <Button
+                variant="outline"
+                href="/lovable-uploads/239f869e-852d-47d0-8a65-a5f9d323a788.png"
+                icon="download"
+                download
+              >
                 Download Resume
               </Button>
             </div>
@@ -57,3 +62,4 @@ const HeroSection = ({ className }: HeroSectionProps) => {
 };
 
 export default HeroSection;
+
