@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -36,9 +35,8 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
     setIsSubmitting(true);
 
     try {
-      // Replace this URL with your Make.com webhook URL
-      const webhookUrl = '';  // Add your Make.com webhook URL here
-      
+      const webhookUrl = 'https://hook.eu2.make.com/xp2uqyyxe1dk5gmeqjricb2lpszf1o74';
+
       if (!webhookUrl) {
         toast({
           title: "Configuration Error",
