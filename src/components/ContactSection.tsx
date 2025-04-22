@@ -36,7 +36,7 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
     setIsSubmitting(true);
 
     try {
-      const webhookUrl = 'https://hook.eu2.make.com/xp2uqyyxe1dk5gmeqjricb2lpszf1o74';
+      const webhookUrl = 'https://hook.eu2.make.com/13np4aatwmi6qx3otvf8nu1ctoxnfi9e';
 
       if (!webhookUrl) {
         toast({
