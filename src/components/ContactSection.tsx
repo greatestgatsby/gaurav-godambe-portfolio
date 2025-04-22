@@ -36,7 +36,6 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
     setIsSubmitting(true);
 
     try {
-      // Removed the old webhook URL
       const webhookUrl = 'https://hook.eu2.make.com/13np4aatwmi6qx3otvf8nu1ctoxnfi9e';
 
       if (!webhookUrl) {
@@ -48,13 +47,14 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
         return;
       }
 
-      // Log the data being sent
+      // Enhanced logging for webhook data
       const formPayload = {
         ...formData,
         timestamp: new Date().toISOString(),
         source: window.location.origin
       };
-      console.log('Sending data to webhook:', formPayload);
+      console.log('Webhook Payload:', JSON.stringify(formPayload, null, 2));
+      console.log('Sending data to webhook URL:', webhookUrl);
 
       const response = await fetch(webhookUrl, {
         method: 'POST',
@@ -65,7 +65,7 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
         body: JSON.stringify(formPayload),
       });
 
-      console.log('Webhook response received (no data due to no-cors)');
+      console.log('Webhook request sent successfully. Response status: No-Cors mode');
       
       toast({
         title: "Message Sent",
