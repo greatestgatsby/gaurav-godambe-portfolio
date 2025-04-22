@@ -1,11 +1,12 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Linkedin, Github, Mail, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useToast } from '@/hooks/use-toast';
 
 interface ContactSectionProps {
   className?: string;
@@ -13,10 +14,76 @@ interface ContactSectionProps {
 }
 
 const ContactSection = ({ className, fullPage = false }: ContactSectionProps) => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Form submission logic would go here
-    console.log('Form submitted');
+    setIsSubmitting(true);
+
+    try {
+      // Replace this URL with your Make.com webhook URL
+      const webhookUrl = '';  // Add your Make.com webhook URL here
+      
+      if (!webhookUrl) {
+        toast({
+          title: "Configuration Error",
+          description: "Please set up the Make.com webhook URL",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+          source: window.location.origin
+        }),
+      });
+
+      toast({
+        title: "Message Sent",
+        description: "Thank you for your message. We'll get back to you soon!",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -49,6 +116,8 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                       placeholder="Your Name" 
                       required 
                       className="w-full"
+                      value={formData.name}
+                      onChange={handleInputChange}
                     />
                   </div>
 
@@ -63,6 +132,8 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                       placeholder="your.email@example.com" 
                       required 
                       className="w-full"
+                      value={formData.email}
+                      onChange={handleInputChange}
                     />
                   </div>
 
@@ -76,6 +147,8 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                       placeholder="What is this regarding?" 
                       required 
                       className="w-full"
+                      value={formData.subject}
+                      onChange={handleInputChange}
                     />
                   </div>
 
@@ -89,11 +162,17 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                       placeholder="Your message here..." 
                       required 
                       className="min-h-[120px] w-full"
+                      value={formData.message}
+                      onChange={handleInputChange}
                     />
                   </div>
 
-                  <Button type="submit" className="w-full bg-accent hover:bg-accent-dark text-white">
-                    Send Message
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-accent hover:bg-accent-dark text-white"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
@@ -201,4 +280,3 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
 };
 
 export default ContactSection;
-
