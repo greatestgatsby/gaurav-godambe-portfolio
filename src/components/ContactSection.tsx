@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -46,19 +47,25 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
         return;
       }
 
+      // Log the data being sent
+      const formPayload = {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        source: window.location.origin
+      };
+      console.log('Sending data to webhook:', formPayload);
+
       const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        mode: 'no-cors',
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: window.location.origin
-        }),
+        mode: 'no-cors', // This is needed for cross-domain requests
+        body: JSON.stringify(formPayload),
       });
 
+      console.log('Webhook response received (no data due to no-cors)');
+      
       toast({
         title: "Message Sent",
         description: "Thank you for your message. We'll get back to you soon!",
