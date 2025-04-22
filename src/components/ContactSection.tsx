@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -7,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Linkedin, Github, Mail, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
+import { submitWebhookForm } from '@/utils/webhookUtils';
 
 interface ContactSectionProps {
   className?: string;
@@ -35,51 +35,20 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
     event.preventDefault();
     setIsSubmitting(true);
 
+    const webhookUrl = 'https://hook.eu2.make.com/13np4aatwmi6qx3otvf8nu1ctoxnfi9e';
+
     try {
-      const webhookUrl = 'https://hook.eu2.make.com/13np4aatwmi6qx3otvf8nu1ctoxnfi9e';
-
-      if (!webhookUrl) {
-        toast({
-          title: "Configuration Error",
-          description: "Please set up the Make.com webhook URL",
-          variant: "destructive",
-        });
-        return;
-      }
-
-      // Enhanced logging for webhook data
-      const formPayload = {
-        ...formData,
-        timestamp: new Date().toISOString(),
-        source: window.location.origin
-      };
-      console.log('Webhook Payload:', JSON.stringify(formPayload, null, 2));
-      console.log('Sending data to webhook URL:', webhookUrl);
-
-      const response = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'no-cors', // This is needed for cross-domain requests
-        body: JSON.stringify(formPayload),
-      });
-
-      console.log('Webhook request sent successfully. Response status: No-Cors mode');
+      const success = await submitWebhookForm(formData, webhookUrl);
       
-      toast({
-        title: "Message Sent",
-        description: "Thank you for your message. We'll get back to you soon!",
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-
+      if (success) {
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
       toast({
@@ -106,7 +75,6 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <Card className="overflow-hidden">
               <CardContent className="p-6 md:p-8">
@@ -185,7 +153,6 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
             </Card>
           </div>
 
-          {/* Contact Information */}
           <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Card className="h-full">
               <CardContent className="p-6 md:p-8 h-full flex flex-col">
