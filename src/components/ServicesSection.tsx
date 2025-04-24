@@ -70,9 +70,21 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
         'Continuous Improvement Programs',
       ],
     },
+    {
+      id: 6,
+      title: 'AI Consulting & Implementation',
+      description: 'Strategic guidance on leveraging AI technologies to transform your business operations. From assessment to implementation of custom AI solutions.',
+      icon: 'brain',
+      highlights: [
+        'ChatGPT Integration',
+        'AI Workflow Automation',
+        'Custom LLM Solutions',
+        'AI Strategy Development',
+      ],
+      status: 'coming-soon'
+    },
   ];
 
-  // Display all services for full page, but limited set for homepage
   const displayedServices = fullPage ? services : services.slice(0, 3);
 
   return (

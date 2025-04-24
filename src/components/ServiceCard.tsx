@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { CheckCircle, ChevronRight, BarChart3, Bot, ClipboardList, LineChart, Presentation } from 'lucide-react';
+import { CheckCircle, ChevronRight, BarChart3, Bot, ClipboardList, LineChart, Presentation, Brain } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ServiceCardProps {
@@ -10,6 +9,7 @@ interface ServiceCardProps {
   icon: string;
   highlights: string[];
   className?: string;
+  status?: 'coming-soon';
 }
 
 const ServiceCard = ({
@@ -18,29 +18,41 @@ const ServiceCard = ({
   icon,
   highlights,
   className,
+  status
 }: ServiceCardProps) => {
   const getIcon = () => {
     switch (icon) {
       case 'chart-bar':
         return <BarChart3 className="h-10 w-10 text-accent" />;
       case 'robot':
-        return <Bot className="h-10 w-10 text-accent" />; // Changed from Robot to Bot
+        return <Bot className="h-10 w-10 text-accent" />;
       case 'clipboard-list':
         return <ClipboardList className="h-10 w-10 text-accent" />;
       case 'chart-line':
         return <LineChart className="h-10 w-10 text-accent" />;
       case 'presentation-chart-bar':
-        return <Presentation className="h-10 w-10 text-accent" />; // Changed from PresentationChart to Presentation
+        return <Presentation className="h-10 w-10 text-accent" />;
+      case 'brain':
+        return <Brain className="h-10 w-10 text-accent" />;
       default:
         return <BarChart3 className="h-10 w-10 text-accent" />;
     }
   };
 
   return (
-    <Card className={cn('overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1', className)}>
+    <Card className={cn(
+      'overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1',
+      status === 'coming-soon' && 'bg-purple-50',
+      className
+    )}>
       <CardContent className="pt-6">
-        <div className="mb-4">
+        <div className="mb-4 flex justify-between items-start">
           {getIcon()}
+          {status === 'coming-soon' && (
+            <span className="inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800">
+              Coming Soon
+            </span>
+          )}
         </div>
         <h3 className="text-xl font-bold text-navy-900 mb-3">{title}</h3>
         <p className="text-navy-600 mb-6">{description}</p>
@@ -56,9 +68,12 @@ const ServiceCard = ({
       <CardFooter className="pt-4">
         <a
           href="/contact"
-          className="text-accent hover:text-accent-dark transition-colors inline-flex items-center text-sm font-medium"
+          className={cn(
+            "text-accent hover:text-accent-dark transition-colors inline-flex items-center text-sm font-medium",
+            status === 'coming-soon' && 'pointer-events-none opacity-50'
+          )}
         >
-          Request a Quote
+          {status === 'coming-soon' ? 'Available Soon' : 'Request a Quote'}
           <ChevronRight className="ml-1 h-4 w-4" />
         </a>
       </CardFooter>
