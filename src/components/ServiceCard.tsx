@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { CheckCircle, ChevronRight, BarChart3, Bot, ClipboardList, LineChart, Presentation, Brain } from 'lucide-react';

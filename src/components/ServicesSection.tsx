@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import ServiceCard from './ServiceCard';
@@ -45,7 +46,7 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
         'Custom LLM Solutions',
         'AI Strategy Development',
       ],
-      status: 'coming-soon'
+      status: 'coming-soon' as const
     },
     {
       id: 3,
