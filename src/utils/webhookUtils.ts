@@ -14,8 +14,7 @@ export const submitWebhookForm = async (
 ) => {
   if (!webhookUrl) {
     toast("Configuration Error", {
-      description: "Please set up the webhook URL",
-      variant: "destructive",
+      description: "Please set up the webhook URL"
     });
     return false;
   }
@@ -42,15 +41,14 @@ export const submitWebhookForm = async (
     console.log('Webhook request sent successfully. Response status: No-Cors mode');
     
     toast("Message Sent", {
-      description: "Thank you for your message. We'll get back to you soon!",
+      description: "Thank you for your message. We'll get back to you soon!"
     });
 
     return true;
   } catch (error) {
     console.error('Error submitting form:', error);
     toast("Error", {
-      description: "Failed to send message. Please try again later.",
-      variant: "destructive",
+      description: "Failed to send message. Please try again later."
     });
     return false;
   }
