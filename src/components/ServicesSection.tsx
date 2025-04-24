@@ -35,6 +35,19 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
       ],
     },
     {
+      id: 6,
+      title: 'AI Consulting & Implementation',
+      description: 'Strategic guidance on leveraging AI technologies to transform your business operations. From assessment to implementation of custom AI solutions.',
+      icon: 'brain',
+      highlights: [
+        'ChatGPT Integration',
+        'AI Workflow Automation',
+        'Custom LLM Solutions',
+        'AI Strategy Development',
+      ],
+      status: 'coming-soon'
+    },
+    {
       id: 3,
       title: 'Program & Project Management',
       description: 'End-to-end program management services with Agile execution, stakeholder alignment, and governance structures to ensure successful delivery.',
@@ -70,19 +83,6 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
         'Continuous Improvement Programs',
       ],
     },
-    {
-      id: 6,
-      title: 'AI Consulting & Implementation',
-      description: 'Strategic guidance on leveraging AI technologies to transform your business operations. From assessment to implementation of custom AI solutions.',
-      icon: 'brain',
-      highlights: [
-        'ChatGPT Integration',
-        'AI Workflow Automation',
-        'Custom LLM Solutions',
-        'AI Strategy Development',
-      ],
-      status: 'coming-soon'
-    },
   ];
 
   const displayedServices = fullPage ? services : services.slice(0, 3);
@@ -112,6 +112,7 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
                 description={service.description}
                 icon={service.icon}
                 highlights={service.highlights}
+                status={service.status}
               />
             </div>
           ))}
