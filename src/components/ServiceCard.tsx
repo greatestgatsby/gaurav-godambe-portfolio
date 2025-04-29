@@ -40,10 +40,13 @@ const ServiceCard = ({
     }
   };
 
+  const isAIService = title.toLowerCase().includes('ai');
+
   return (
     <Card className={cn(
       'overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1',
       status === 'coming-soon' && 'bg-purple-50',
+      isAIService && 'bg-gradient-to-br from-white to-accent/5',
       className
     )}>
       <CardContent className="pt-6">
@@ -54,13 +57,20 @@ const ServiceCard = ({
               Coming Soon
             </span>
           )}
+          {isAIService && !status && (
+            <span className="inline-flex items-center rounded-full bg-accent/20 px-2.5 py-0.5 text-xs font-medium text-accent-dark">
+              AI-Powered
+            </span>
+          )}
         </div>
-        <h3 className="text-xl font-bold text-navy-900 mb-3">{title}</h3>
+        <h3 className={cn("text-xl font-bold text-navy-900 mb-3", isAIService && "text-accent-dark")}>
+          {title}
+        </h3>
         <p className="text-navy-600 mb-6">{description}</p>
         <div className="space-y-2">
           {highlights.map((highlight, index) => (
             <div key={index} className="flex items-start">
-              <CheckCircle className="mr-2 h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+              <CheckCircle className={cn("mr-2 h-5 w-5 flex-shrink-0 mt-0.5", isAIService ? "text-accent-dark" : "text-accent")} />
               <span className="text-navy-700">{highlight}</span>
             </div>
           ))}
@@ -74,7 +84,7 @@ const ServiceCard = ({
             status === 'coming-soon' && 'pointer-events-none opacity-50'
           )}
         >
-          {status === 'coming-soon' ? 'Available Soon' : 'Request a Quote'}
+          Request a Quote
           <ChevronRight className="ml-1 h-4 w-4" />
         </a>
       </CardFooter>

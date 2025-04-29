@@ -12,15 +12,15 @@ interface ServicesSectionProps {
 const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) => {
   const services = [
     {
-      id: 1,
-      title: 'Finance Transformation & FP&A Consulting',
-      description: 'Expert guidance on forecasting, annual operating planning, P&L management, and KPI reporting systems to optimize your financial operations.',
-      icon: 'chart-bar',
+      id: 6,
+      title: 'AI Consulting & Implementation',
+      description: 'Strategic guidance on leveraging AI technologies to transform your business operations. From assessment to implementation of custom AI solutions.',
+      icon: 'brain',
       highlights: [
-        'Financial Process Optimization',
-        'Budget & Forecast Modeling',
-        'P&L Management Frameworks',
-        'KPI Design & Implementation',
+        'ChatGPT Integration',
+        'AI Workflow Automation',
+        'Custom Chat Bots for businesses',
+        'AI agent for booking appointments',
       ],
     },
     {
@@ -36,17 +36,16 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
       ],
     },
     {
-      id: 6,
-      title: 'AI Consulting & Implementation',
-      description: 'Strategic guidance on leveraging AI technologies to transform your business operations. From assessment to implementation of custom AI solutions.',
-      icon: 'brain',
+      id: 1,
+      title: 'Finance Transformation & FP&A Consulting',
+      description: 'Expert guidance on forecasting, annual operating planning, P&L management, and KPI reporting systems to optimize your financial operations.',
+      icon: 'chart-bar',
       highlights: [
-        'ChatGPT Integration',
-        'AI Workflow Automation',
-        'Custom Chat Bots for businesses',
-        'AI agent for booking appointments',
+        'Financial Process Optimization',
+        'Budget & Forecast Modeling',
+        'P&L Management Frameworks',
+        'KPI Design & Implementation',
       ],
-      status: 'coming-soon' as const
     },
     {
       id: 3,
@@ -96,7 +95,7 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
             {fullPage ? 'Services I Offer' : 'My Services'}
           </h2>
           <p className="text-xl text-navy-600 max-w-3xl mx-auto">
-            Specialized expertise to help your business thrive through financial optimization,
+            Specialized expertise to help your business thrive through <span className="text-accent font-medium">AI integration</span>, financial optimization,
             technology integration, and strategic guidance.
           </p>
         </div>
@@ -113,7 +112,7 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
                 description={service.description}
                 icon={service.icon}
                 highlights={service.highlights}
-                status={service.status}
+                className={service.id === 6 || service.id === 2 ? "border-2 border-accent shadow-accent/20" : ""}
               />
             </div>
           ))}
@@ -132,8 +131,8 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
             <div className="bg-white rounded-xl p-8 md:p-12 shadow-lg max-w-4xl mx-auto">
               <h3 className="text-2xl md:text-3xl font-bold text-navy-900 mb-6">Ready to Work Together?</h3>
               <p className="text-lg text-navy-600 mb-8">
-                Have a specific project in mind or need customized solutions? Let's discuss how I can help
-                you transform your finance operations and drive business growth.
+                Have a specific project in mind or need customized <span className="text-accent font-medium">AI solutions</span>? Let's discuss how I can help
+                you transform your operations and drive business growth.
               </p>
               <Button variant="primary" href="/contact" icon="arrow" size="lg">
                 Get in Touch
