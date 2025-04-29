@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import Button from '@/components/ui/CustomButton';
 
 interface PortfolioCardProps {
   title: string;
@@ -11,6 +12,7 @@ interface PortfolioCardProps {
   category: string;
   image: string;
   tech: string;
+  previewUrl?: string; // Added optional previewUrl prop
   className?: string;
 }
 
@@ -21,6 +23,7 @@ const PortfolioCard = ({
   category,
   image,
   tech,
+  previewUrl,
   className,
 }: PortfolioCardProps) => {
   const getCategoryColor = (category: string) => {
@@ -66,7 +69,13 @@ const PortfolioCard = ({
           </div>
         </div>
       </CardContent>
-      {/* Removed CardFooter with "View Project Details" link */}
+      {previewUrl && (
+        <CardFooter className="pt-0 pb-4">
+          <Button variant="outline" size="sm" href={previewUrl} icon="external">
+            Preview Site
+          </Button>
+        </CardFooter>
+      )}
     </Card>
   );
 };

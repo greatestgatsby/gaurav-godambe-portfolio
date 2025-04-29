@@ -51,6 +51,7 @@ const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps
       category: 'AI',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
       tech: 'Lovable AI, React, Tailwind CSS',
+      previewUrl: 'https://preview-e549300c--premium-pack-mumbai.lovable.app/',
     },
     {
       id: 4,
@@ -134,6 +135,7 @@ const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps
                 category={project.category}
                 image={project.image}
                 tech={project.tech}
+                previewUrl={project.previewUrl}
               />
             </div>
           ))}
