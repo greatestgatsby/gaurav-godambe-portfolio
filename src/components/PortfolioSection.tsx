@@ -45,8 +45,8 @@ const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps
     },
     {
       id: 7,
-      title: 'AI-Built Premium Pack Mumbai Landing Page',
-      summary: 'Created a fully responsive landing page for Premium Pack Mumbai using advanced AI tools.',
+      title: 'AI-Curated Premium Website Landing Page for Paper Manufacturer',
+      summary: 'Created a fully responsive, premium landing page for a paper manufacturing company using advanced AI tools.',
       impact: 'Delivered a professional website in a fraction of the time of traditional development.',
       category: 'AI',
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
