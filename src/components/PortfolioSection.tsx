@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import PortfolioCard from './PortfolioCard';
@@ -41,6 +42,15 @@ const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps
       category: 'Product',
       image: 'https://images.unsplash.com/photo-1551434678-e076c223a692',
       tech: 'Power BI + Copilot',
+    },
+    {
+      id: 7,
+      title: 'AI-Built Premium Pack Mumbai Landing Page',
+      summary: 'Created a fully responsive landing page for Premium Pack Mumbai using advanced AI tools.',
+      impact: 'Delivered a professional website in a fraction of the time of traditional development.',
+      category: 'AI',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
+      tech: 'Lovable AI, React, Tailwind CSS',
     },
     {
       id: 4,
