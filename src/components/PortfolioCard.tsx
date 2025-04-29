@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import Button from '@/components/ui/CustomButton';
+import { TrendingUp } from 'lucide-react';
 
 interface PortfolioCardProps {
   title: string;
@@ -12,7 +13,8 @@ interface PortfolioCardProps {
   category: string;
   image: string;
   tech: string;
-  previewUrl?: string; // Added optional previewUrl prop
+  previewUrl?: string;
+  trending?: boolean;
   className?: string;
 }
 
@@ -24,6 +26,7 @@ const PortfolioCard = ({
   image,
   tech,
   previewUrl,
+  trending = false,
   className,
 }: PortfolioCardProps) => {
   const getCategoryColor = (category: string) => {
@@ -51,7 +54,13 @@ const PortfolioCard = ({
           alt={title}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
         />
-        <div className="absolute top-3 right-3">
+        <div className="absolute top-3 right-3 flex gap-2 items-center">
+          {trending && (
+            <div className="flex items-center gap-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full px-3 py-1 text-xs font-medium shadow-md">
+              <TrendingUp size={14} className="animate-pulse" />
+              <span>Trending</span>
+            </div>
+          )}
           <Badge className={getCategoryColor(category)}>{category}</Badge>
         </div>
       </div>

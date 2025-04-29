@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import PortfolioCard from './PortfolioCard';
@@ -16,6 +15,17 @@ const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps
 
   // Sample portfolio projects
   const projects = [
+    {
+      id: 7,
+      title: 'AI-Curated Premium Website Landing Page for Paper Manufacturer',
+      summary: 'Created a fully responsive, premium landing page for a paper manufacturing company using advanced AI tools.',
+      impact: 'Delivered a professional website in a fraction of the time of traditional development.',
+      category: 'AI',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
+      tech: 'Lovable AI, React, Tailwind CSS',
+      previewUrl: 'https://preview-e549300c--premium-pack-mumbai.lovable.app/',
+      trending: true,
+    },
     {
       id: 1,
       title: 'Client Coverage Performance Dashboard',
@@ -42,16 +52,6 @@ const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps
       category: 'Product',
       image: 'https://images.unsplash.com/photo-1551434678-e076c223a692',
       tech: 'Power BI + Copilot',
-    },
-    {
-      id: 7,
-      title: 'AI-Curated Premium Website Landing Page for Paper Manufacturer',
-      summary: 'Created a fully responsive, premium landing page for a paper manufacturing company using advanced AI tools.',
-      impact: 'Delivered a professional website in a fraction of the time of traditional development.',
-      category: 'AI',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
-      tech: 'Lovable AI, React, Tailwind CSS',
-      previewUrl: 'https://preview-e549300c--premium-pack-mumbai.lovable.app/',
     },
     {
       id: 4,
@@ -136,6 +136,7 @@ const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps
                 image={project.image}
                 tech={project.tech}
                 previewUrl={project.previewUrl}
+                trending={project.trending}
               />
             </div>
           ))}
