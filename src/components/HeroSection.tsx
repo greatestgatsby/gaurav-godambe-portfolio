@@ -20,7 +20,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
               15+ years of experience driving finance transformation, automation, and performance excellence.
             </p>
             <p className="text-lg text-navy-500 mb-8">
-              Vice President | Business Finance | FP&A | Tech Transformation | Program Leadership
+              Applied AI Consultant | Business Finance | FP&A | Tech Transformation
             </p>
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" href="/portfolio" icon="arrow">
@@ -62,4 +62,3 @@ const HeroSection = ({ className }: HeroSectionProps) => {
 };
 
 export default HeroSection;
-
