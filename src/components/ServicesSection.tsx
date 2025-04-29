@@ -43,8 +43,8 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
       highlights: [
         'ChatGPT Integration',
         'AI Workflow Automation',
-        'Custom LLM Solutions',
-        'AI Strategy Development',
+        'Custom Chat Bots for businesses',
+        'AI agent for booking appointments',
       ],
       status: 'coming-soon' as const
     },
