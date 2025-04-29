@@ -46,8 +46,25 @@ const PortfolioCard = ({
     }
   };
 
+  // Create structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": title,
+    "description": summary,
+    "creator": {
+      "@type": "Person",
+      "name": "Gaurav Godambe"
+    },
+    "keywords": `${category}, AI consulting, business transformation, ${tech}`,
+    ...(previewUrl && { "url": previewUrl })
+  };
+
   return (
     <Card className={cn('overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1', className)}>
+      {/* Add structured data for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      
       <div className="aspect-[16/9] relative overflow-hidden">
         <img
           src={image}
