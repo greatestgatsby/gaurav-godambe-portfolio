@@ -1,8 +1,10 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Linkedin, Mail, MapPin, Calendar } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Button from '@/components/ui/CustomButton';
 
 interface ContactSectionProps {
   className?: string;
@@ -10,18 +12,24 @@ interface ContactSectionProps {
 }
 
 const ContactSection = ({ className, fullPage = false }: ContactSectionProps) => {
-  useEffect(() => {
-    // Load Calendly widget script
-    const script = document.createElement('script');
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
-    return () => {
-      // Clean up script when component unmounts
-      document.body.removeChild(script);
-    };
-  }, []);
+  useEffect(() => {
+    // Load Calendly widget script when dialog is opened
+    if (dialogOpen) {
+      const script = document.createElement('script');
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        // Clean up script when component unmounts or dialog closes
+        if (document.body.contains(script)) {
+          document.body.removeChild(script);
+        }
+      };
+    }
+  }, [dialogOpen]);
 
   return (
     <section className={cn('py-12 md:py-16', className)}>
@@ -77,13 +85,24 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                     </div>
                   </div>
 
-                  <div className="flex items-center">
-                    <Calendar className="h-6 w-6 text-accent mr-4 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-navy-800">Schedule a Meeting</h4>
-                      <p className="text-navy-600">Book a 30-minute consultation</p>
-                    </div>
-                  </div>
+                  <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                    <DialogTrigger asChild>
+                      <div className="flex items-center cursor-pointer group">
+                        <Calendar className="h-6 w-6 text-accent mr-4 flex-shrink-0 group-hover:text-accent-600 transition-colors" />
+                        <div>
+                          <h4 className="font-semibold text-navy-800 group-hover:text-accent transition-colors">Schedule a Meeting</h4>
+                          <p className="text-navy-600 group-hover:text-navy-800 transition-colors">Book a 30-minute consultation</p>
+                        </div>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[600px] h-[700px] p-0">
+                      <div 
+                        className="calendly-inline-widget" 
+                        data-url="https://calendly.com/gaurav-g83/30min" 
+                        style={{ minWidth: "320px", height: "700px" }}
+                      ></div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
                 
                 {fullPage && (
@@ -109,13 +128,27 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
               </CardContent>
             </Card>
 
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div 
-                className="calendly-inline-widget" 
-                data-url="https://calendly.com/gaurav-g83/30min" 
-                style={{ minWidth: "320px", height: "600px" }}
-              ></div>
-            </div>
+            <Card className="shadow-lg h-full">
+              <CardContent className="p-6 md:p-8 h-full flex flex-col justify-center items-center">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-semibold text-navy-800 mb-2">Ready to Chat?</h3>
+                  <p className="text-navy-600">Click the calendar option to schedule a meeting or send me a direct message.</p>
+                </div>
+                
+                <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                  <DialogTrigger asChild>
+                    <Button 
+                      variant="default" 
+                      size="lg" 
+                      icon="arrow"
+                      className="bg-accent hover:bg-accent/90 text-white"
+                    >
+                      Schedule a Meeting
+                    </Button>
+                  </DialogTrigger>
+                </Dialog>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
