@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import PortfolioCard from './PortfolioCard';
@@ -10,11 +11,22 @@ interface PortfolioSectionProps {
 
 const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps) => {
   // Define project categories
-  const categories = ['All', 'Strategy', 'Sales', 'Product', 'AI', 'Automation'];
+  const categories = ['All', 'Strategy', 'Sales', 'Product', 'AI', 'Automation', 'Healthcare'];
   const [activeCategory, setActiveCategory] = useState('All');
 
   // Sample portfolio projects
   const projects = [
+    {
+      id: 8,
+      title: 'Healthcare Record Management System',
+      summary: 'Built a modern web app for a small clinic to manage patient records with an intuitive interface and secure data handling.',
+      impact: 'Reduced record retrieval time by 65% and improved staff productivity by 40%.',
+      category: 'Healthcare',
+      image: 'https://images.unsplash.com/photo-1587370560942-ad2a04eabb6d',
+      tech: 'React, TypeScript, Tailwind CSS, Supabase',
+      previewUrl: 'https://preview--clinic-record-central.lovable.app/',
+      trending: true,
+    },
     {
       id: 7,
       title: 'AI-Curated Premium Website Landing Page for Paper Manufacturer',
