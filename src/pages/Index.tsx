@@ -8,6 +8,7 @@ import PortfolioSection from '@/components/PortfolioSection';
 import ServicesSection from '@/components/ServicesSection';
 import BlogSection from '@/components/BlogSection';
 import ContactSection from '@/components/ContactSection';
+import CertificationsSection from '@/components/CertificationsSection';
 import { Helmet } from 'react-helmet';
 
 const Index = () => {
@@ -24,6 +25,7 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <PortfolioSection />
+        <CertificationsSection />
         <ServicesSection />
         <BlogSection />
         <ContactSection />
