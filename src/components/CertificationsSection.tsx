@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Award, GraduationCap, FileCheck } from 'lucide-react';
 import Button from '@/components/ui/CustomButton';
+import { Link } from 'react-router-dom';
 
 interface CertificationsSectionProps {
   className?: string;
@@ -117,9 +118,11 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
 
         {fullPage && (
           <div className="text-center mt-12">
-            <Button variant="outline" href="/resume" icon="download">
-              Download Full Resume
-            </Button>
+            <Link to="/resume">
+              <Button variant="outline" icon="download">
+                Download Full Resume
+              </Button>
+            </Link>
           </div>
         )}
       </div>
