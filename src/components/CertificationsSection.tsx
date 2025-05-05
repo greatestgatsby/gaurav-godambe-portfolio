@@ -3,7 +3,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Certificate, GraduationCap, Award } from 'lucide-react';
+import { Award, GraduationCap, FileCheck } from 'lucide-react';
 import Button from '@/components/ui/CustomButton';
 
 interface CertificationsSectionProps {
@@ -61,7 +61,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'AI':
-        return <Certificate className="h-5 w-5 text-accent" />;
+        return <FileCheck className="h-5 w-5 text-accent" />;
       case 'Digital Marketing':
         return <Award className="h-5 w-5 text-purple-500" />;
       default:
