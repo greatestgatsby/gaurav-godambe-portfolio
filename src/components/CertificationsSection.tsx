@@ -51,7 +51,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Google',
       date: 'May 3, 2025',
       category: 'Digital Marketing',
-      image: '/placeholder.svg',
+      image: '/lovable-uploads/5463c36a-30f4-4d3a-920f-50c0bfdcb8f8.png',
     },
   ];
 
