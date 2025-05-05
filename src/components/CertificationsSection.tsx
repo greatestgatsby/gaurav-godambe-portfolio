@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
@@ -18,7 +19,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Outskill',
       date: 'April 2025',
       category: 'AI',
-      image: '/lovable-uploads/5183ef90-41bf-4169-a642-ff8c00e1af15.png',
+      image: '/placeholder.svg',
     },
     {
       id: 2,
@@ -26,7 +27,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'LinkedIn Learning',
       date: 'April 15, 2025',
       category: 'Digital Marketing',
-      image: '/lovable-uploads/272921b1-8534-4f16-a131-7f19687d4e9a.png',
+      image: '/placeholder.svg',
     },
     {
       id: 3,
@@ -34,7 +35,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Project Management Institute',
       date: 'April 13, 2025',
       category: 'AI',
-      image: '/lovable-uploads/f428ae27-3bd1-4ebd-a533-a45ff86595f5.png',
+      image: '/placeholder.svg',
     },
     {
       id: 4,
@@ -42,7 +43,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Council for Six Sigma Certification',
       date: 'April 7, 2025',
       category: 'Process Improvement',
-      image: '/lovable-uploads/d1877162-8b8d-4a4d-a6d1-f26f06a8a9fc.png',
+      image: '/placeholder.svg',
     },
     {
       id: 5,
@@ -50,7 +51,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Google',
       date: 'May 3, 2025',
       category: 'Digital Marketing',
-      image: '/lovable-uploads/20aba43c-df3b-4251-a928-52f5672ae967.png',
+      image: '/placeholder.svg',
     },
   ];
 
