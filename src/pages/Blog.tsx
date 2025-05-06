@@ -3,7 +3,6 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogSection from '@/components/BlogSection';
-import BlogPost from '@/components/BlogPost';
 import { Helmet } from 'react-helmet';
 
 const Blog = () => {
@@ -27,12 +26,8 @@ const Blog = () => {
             </p>
           </div>
         </div>
-        <section className="py-12">
-          <BlogPost />
-        </section>
         <section className="py-12 bg-gray-50">
           <div className="container">
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-8 text-center">More Articles</h2>
             <BlogSection fullPage />
           </div>
         </section>

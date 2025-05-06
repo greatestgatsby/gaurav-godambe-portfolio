@@ -1,12 +1,26 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { BlogPostType } from '@/data/blogPosts';
 
 interface BlogPostProps {
   className?: string;
+  post?: BlogPostType;
 }
 
-const BlogPost = ({ className }: BlogPostProps) => {
+const BlogPost = ({ className, post }: BlogPostProps) => {
+  // If no post is provided or content is not 'fullarticle', show default content
+  if (!post || post.content !== 'fullarticle') {
+    return (
+      <article className={cn('prose prose-lg max-w-4xl mx-auto px-4 md:px-0', className)}>
+        <div className="text-center py-10">
+          <h1 className="text-3xl font-bold text-navy-900">Coming Soon</h1>
+          <p className="text-navy-600 mt-4">This article is currently being prepared and will be available soon.</p>
+        </div>
+      </article>
+    );
+  }
+
   return (
     <article className={cn('prose prose-lg max-w-4xl mx-auto px-4 md:px-0', className)}>
       <h1 className="text-3xl md:text-4xl font-bold text-navy-900 mb-6">
