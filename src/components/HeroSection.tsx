@@ -27,13 +27,6 @@ const HeroSection = ({ className }: HeroSectionProps) => {
               <Button variant="primary" href="/portfolio" icon="arrow">
                 View My Work
               </Button>
-              <Button
-                variant="outline"
-                href="/resume"
-                icon="external"
-              >
-                View Resume
-              </Button>
             </div>
           </div>
           <div className="order-1 lg:order-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
