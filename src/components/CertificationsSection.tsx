@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Award, GraduationCap, FileCheck, ExternalLink, FileText } from 'lucide-react';
+import { Award, GraduationCap, FileCheck } from 'lucide-react';
 import Button from '@/components/ui/CustomButton';
 import { Link } from 'react-router-dom';
 
@@ -18,8 +18,6 @@ interface Certificate {
   issuer: string;
   date: string;
   category: string;
-  image: string;
-  pdfUrl?: string;
 }
 
 const CertificationsSection = ({ className, fullPage = false }: CertificationsSectionProps) => {
@@ -32,8 +30,6 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Outskill',
       date: 'April 2025',
       category: 'AI',
-      image: '/placeholder.svg',
-      pdfUrl: '/certificates/ai-mastery-workshop.pdf',
     },
     {
       id: 2,
@@ -41,8 +37,6 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'LinkedIn Learning',
       date: 'April 15, 2025',
       category: 'Digital Marketing',
-      image: '/placeholder.svg',
-      pdfUrl: '/certificates/seo-foundations.pdf',
     },
     {
       id: 3,
@@ -50,8 +44,6 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Project Management Institute',
       date: 'April 13, 2025',
       category: 'AI',
-      image: '/lovable-uploads/2847f3dd-30be-4687-930e-7807b07cbec4.png',
-      pdfUrl: '/certificates/generative-ai-overview.pdf',
     },
     {
       id: 4,
@@ -59,8 +51,6 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Council for Six Sigma Certification',
       date: 'April 7, 2025',
       category: 'Process Improvement',
-      image: '/placeholder.svg',
-      pdfUrl: '/certificates/six-sigma-whitebelt.pdf',
     },
     {
       id: 5,
@@ -68,8 +58,6 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Google',
       date: 'May 3, 2025',
       category: 'Digital Marketing',
-      image: '/lovable-uploads/5463c36a-30f4-4d3a-920f-50c0bfdcb8f8.png',
-      pdfUrl: '/certificates/google-my-business.pdf',
     },
   ];
 
@@ -108,26 +96,8 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
               style={{ animationDelay: `${0.2 + index * 0.1}s` }}
             >
               <Card className="overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col">
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
-                  <img 
-                    src={cert.image} 
-                    alt={`${cert.title} Certificate`} 
-                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
-                  />
-                  
-                  {cert.pdfUrl && (
-                    <div className="absolute bottom-2 right-2">
-                      <a 
-                        href={cert.pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
-                        title="View Certificate PDF"
-                      >
-                        <FileText className="h-5 w-5 text-red-500" />
-                      </a>
-                    </div>
-                  )}
+                <div className="relative aspect-[4/3] w-full bg-gray-100">
+                  {/* Image and PDF removed as requested */}
                 </div>
                 <CardContent className="flex-grow flex flex-col p-5">
                   <div className="mb-2 flex items-center justify-between">
