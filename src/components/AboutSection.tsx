@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -26,7 +27,7 @@ const AboutSection = ({ className, fullPage = false }: AboutSectionProps) => {
     technology: [
       'Power BI',
       'SAP',
-      'RPA & Automation',
+      'Automation',
       'Salesforce Einstein',
     ],
     ai: [
