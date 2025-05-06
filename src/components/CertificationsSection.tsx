@@ -16,7 +16,7 @@ interface Certificate {
   id: number;
   title: string;
   issuer: string;
-  date: string;
+  date: string; // We'll keep the date in the data structure but not display it
   category: string;
   imageUrl?: string;
 }
@@ -112,14 +112,13 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
                   )}
                 </div>
                 <CardContent className="flex-grow flex flex-col p-5">
-                  <div className="mb-2 flex items-center justify-between">
+                  <div className="mb-2 flex items-center">
                     <Badge variant={cert.category === 'AI' ? 'default' : 'secondary'} className="mb-2">
                       <span className="flex items-center">
                         {getCategoryIcon(cert.category)}
                         <span className="ml-1">{cert.category}</span>
                       </span>
                     </Badge>
-                    <span className="text-sm text-navy-500">{cert.date}</span>
                   </div>
                   <h3 className="text-lg font-semibold text-navy-900 mb-2">{cert.title}</h3>
                   <p className="text-navy-600 text-sm">Issued by {cert.issuer}</p>
