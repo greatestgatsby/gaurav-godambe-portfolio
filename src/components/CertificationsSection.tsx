@@ -31,6 +31,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Outskill',
       date: 'April 2025',
       category: 'AI',
+      imageUrl: '/lovable-uploads/AI Mastery Workshop.png'
     },
     {
       id: 2,
@@ -38,6 +39,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'LinkedIn Learning',
       date: 'April 15, 2025',
       category: 'Digital Marketing',
+      imageUrl: '/lovable-uploads/SEO Foundations.png'
     },
     {
       id: 3,
@@ -53,6 +55,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Council for Six Sigma Certification',
       date: 'April 7, 2025',
       category: 'Process Improvement',
+      imageUrl: '/lovable-uploads/Six Sigma White Belt.png'
     },
     {
       id: 5,
@@ -60,6 +63,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Google',
       date: 'May 3, 2025',
       category: 'Digital Marketing',
+      imageUrl: '/lovable-uploads/Google My Business.png'
     },
   ];
 
