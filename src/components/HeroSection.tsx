@@ -26,9 +26,6 @@ const HeroSection = ({ className }: HeroSectionProps) => {
               <Button variant="primary" href="/portfolio" icon="arrow">
                 View My Work
               </Button>
-              <Button variant="secondary" href="/contact" icon="arrow">
-                Hire Me
-              </Button>
               <Button
                 variant="outline"
                 href="/Gaurav Godambe Resume.pdf"
