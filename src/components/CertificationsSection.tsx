@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Award, GraduationCap, FileCheck, ExternalLink, FilePdf } from 'lucide-react';
+import { Award, GraduationCap, FileCheck, ExternalLink, FileText } from 'lucide-react';
 import Button from '@/components/ui/CustomButton';
 import { Link } from 'react-router-dom';
 
@@ -124,7 +124,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
                         className="bg-white p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors"
                         title="View Certificate PDF"
                       >
-                        <FilePdf className="h-5 w-5 text-red-500" />
+                        <FileText className="h-5 w-5 text-red-500" />
                       </a>
                     </div>
                   )}
