@@ -59,6 +59,7 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
       category: 'Sales',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
       tech: 'Power BI, Excel Macros',
+      caseStudy: 'coverage-dashboard',
     },
     {
       id: 2,
@@ -133,6 +134,22 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
       ],
       impact: "This profitability framework became a crucial tool for commercial decision-making. It provided transparency into the economics of individual client relationships, helped optimize pricing models, and supported strategic account planning. The model also laid the groundwork for potential integration into system-based reporting tools in the future.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+    },
+    "coverage-dashboard": {
+      title: "Real-Time Client Coverage Performance Dashboard",
+      client: "MSCI",
+      summary: "Developed a real-time dashboard for tracking sales team performance and client coverage incentives, eliminating manual processes and improving transparency.",
+      background: "At MSCI, I spearheaded the development of a real-time dashboard designed to track sales team performance and manage client coverage incentives across the organization. The initiative aimed to eliminate inefficiencies in the existing manual processes, improve incentive transparency, and ultimately drive better sales outcomes.",
+      objective: "The primary goal was to streamline the incentive management process by building a dynamic, real-time reporting solution that captured performance metrics and coverage alignment. The manual approach being used was error-prone, time-consuming, and lacked the agility needed for timely decision-making.",
+      approach: [
+        "To address these challenges, I developed an end-to-end dashboard solution combining Excel macros for data processing and Power BI for visualization and real-time updates.",
+        "Data Automation: Built Excel macros to clean, validate, and consolidate data from CRM, HR systems, and sales logs. Standardized inputs to eliminate manual inconsistencies and reduce processing time.",
+        "Dashboard Development (Power BI): Created interactive dashboards showing individual and team performance against targets, coverage effectiveness by client and region, and incentive payout tracking and forecast. Incorporated filters by sales region, product line, and time period for granular insights.",
+        "Real-Time Updates: Automated data refresh schedules to enable real-time tracking. Integrated alert mechanisms for performance thresholds and incentive triggers.",
+        "Access and Usability: Provided secure, role-based access for sales leadership and regional heads. Optimized UI for quick interpretation of metrics with a clean layout and mobile-friendly view."
+      ],
+      impact: "Cost Savings: Eliminated the need for manual tracking and third-party processing, saving approximately $350K annually. Efficiency Gains: Reduced reporting time from days to minutes, enabling faster decisions. Sales Effectiveness: Gave managers better tools to motivate teams, track incentives, and align coverage strategy with performance.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
     }
   };
 
@@ -206,3 +223,4 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
 };
 
 export default PortfolioSection;
+
