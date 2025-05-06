@@ -30,7 +30,16 @@ const HeroSection = ({ className }: HeroSectionProps) => {
                 variant="outline"
                 href="/Gaurav Godambe Resume.pdf"
                 icon="download"
-                download
+                onClick={(e) => {
+                  e.preventDefault();
+                  // Create a direct link to the resume and trigger download
+                  const link = document.createElement('a');
+                  link.href = '/Gaurav Godambe Resume.pdf';
+                  link.download = 'Gaurav Godambe Resume.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
                 Download Resume
               </Button>

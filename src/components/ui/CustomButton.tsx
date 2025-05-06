@@ -15,7 +15,7 @@ interface ButtonProps {
   icon?: ButtonIcon;
   className?: string;
   href?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
   download?: boolean;
   type?: 'button' | 'submit' | 'reset';
 }
@@ -59,7 +59,7 @@ const Button = ({
         className={cn('rounded-md', className)}
         asChild
       >
-        <a href={href} download={download}>
+        <a href={href} download={download} onClick={onClick}>
           {buttonContent}
         </a>
       </ShadcnButton>

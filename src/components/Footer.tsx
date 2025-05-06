@@ -6,6 +6,18 @@ import { Linkedin, Github, Mail, Download } from 'lucide-react';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
+  // Function to handle resume download
+  const handleResumeDownload = (e) => {
+    e.preventDefault();
+    // Create a direct link to the resume and trigger download
+    const link = document.createElement('a');
+    link.href = '/Gaurav Godambe Resume.pdf';
+    link.download = 'Gaurav Godambe Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  
   return (
     <footer className="bg-navy-900 text-white py-12">
       <div className="container">
@@ -44,8 +56,8 @@ const Footer = () => {
                 <Mail size={20} />
               </a>
               <a 
-                href="/Gaurav Godambe Resume.pdf" 
-                download
+                href="/Gaurav Godambe Resume.pdf"
+                onClick={handleResumeDownload} 
                 className="text-white hover:text-accent-light transition-colors"
                 aria-label="Download Resume"
               >
