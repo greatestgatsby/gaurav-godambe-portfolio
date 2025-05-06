@@ -8,8 +8,9 @@ const Resume = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Resume | Gaurav Godambe</title>
-        <meta name="description" content="View Gaurav Godambe's professional resume showcasing his experience in AI consulting, finance transformation, and business strategy." />
+        <title>Resume | Gaurav Godambe | AI Consultant & Financial Expert</title>
+        <meta name="description" content="View Gaurav Godambe's professional resume showcasing his experience in AI consulting, AI strategy, financial analysis, budgeting, and forecasting." />
+        <meta name="keywords" content="Gaurav Godambe, AI agent, AI consultant, AI strategy, financial analysis, budgeting, forecasting, resume, professional experience" />
       </Helmet>
       <Navbar />
       <main className="flex-grow pt-28 pb-16">
@@ -18,18 +19,9 @@ const Resume = () => {
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img 
               src="/lovable-uploads/Resume Image.png" 
-              alt="Gaurav Godambe's Resume" 
+              alt="Gaurav Godambe's Resume - AI Consultant and Financial Expert" 
               className="w-full object-contain"
             />
-          </div>
-          <div className="mt-8 text-center">
-            <a 
-              href="/lovable-uploads/Resume Image.png"
-              download="Gaurav Godambe Resume.png"
-              className="bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-dark transition-colors inline-flex items-center"
-            >
-              Download Resume Image
-            </a>
           </div>
         </div>
       </main>

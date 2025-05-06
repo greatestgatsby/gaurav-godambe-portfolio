@@ -16,8 +16,8 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Helmet>
         <title>Gaurav Godambe | AI Agent Development & AI Consulting Expert</title>
-        <meta name="description" content="Gaurav Godambe - Expert in AI agents, AI consulting, custom AI agent development, finance transformation, and business strategy with 15+ years of leadership experience." />
-        <meta name="keywords" content="Gaurav, AI agent, AI consultant, AI consulting, AI agents, finance transformation, FP&A leadership, business finance, strategic planning, digital transformation" />
+        <meta name="description" content="Gaurav Godambe - Expert in AI agents, AI consulting, AI strategy, financial analysis, budgeting, and forecasting with 15+ years of leadership experience." />
+        <meta name="keywords" content="Gaurav, AI agent, AI consultant, AI strategy, financial analysis, budgeting, forecasting, finance transformation, FP&A leadership, business finance, strategic planning, digital transformation" />
         <link rel="canonical" href="https://your-domain.com" />
       </Helmet>
       <Navbar />
