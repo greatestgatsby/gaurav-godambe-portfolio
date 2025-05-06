@@ -31,7 +31,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Outskill',
       date: 'April 2025',
       category: 'AI',
-      imageUrl: '/lovable-uploads/AI Mastery Workshop.png'
+      imageUrl: '/lovable-uploads/AI%20Mastery%20Workshop.png'
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'LinkedIn Learning',
       date: 'April 15, 2025',
       category: 'Digital Marketing',
-      imageUrl: '/lovable-uploads/SEO Foundations.png'
+      imageUrl: '/lovable-uploads/SEO%20Foundations.png'
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Project Management Institute',
       date: 'April 13, 2025',
       category: 'AI',
-      imageUrl: '/lovable-uploads/Generative AI Overview for Project Managers_image.png'
+      imageUrl: '/lovable-uploads/Generative%20AI%20Overview%20for%20Project%20Managers_image.png'
     },
     {
       id: 4,
@@ -55,7 +55,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Council for Six Sigma Certification',
       date: 'April 7, 2025',
       category: 'Process Improvement',
-      imageUrl: '/lovable-uploads/Six Sigma White Belt.png'
+      imageUrl: '/lovable-uploads/Six%20Sigma%20White%20Belt.png'
     },
     {
       id: 5,
@@ -63,7 +63,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Google',
       date: 'May 3, 2025',
       category: 'Digital Marketing',
-      imageUrl: '/lovable-uploads/Google My Business.png'
+      imageUrl: '/lovable-uploads/Google%20My%20Business.png'
     },
   ];
 
@@ -110,7 +110,13 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
                       className="w-full h-full object-cover"
                       width="400"
                       height="300"
-                      loading="lazy"
+                      loading="eager"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        console.error(`Failed to load image: ${target.src}`);
+                        // Fallback to a placeholder if loading fails
+                        target.src = 'https://placehold.co/400x300/e2e8f0/64748b?text=Certification';
+                      }}
                     />
                   )}
                 </div>

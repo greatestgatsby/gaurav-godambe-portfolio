@@ -18,12 +18,18 @@ const Resume = () => {
           <h1 className="text-3xl font-bold mb-8 text-navy-900">My Resume</h1>
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img 
-              src="/lovable-uploads/Resume Image.png" 
+              src="/lovable-uploads/Resume%20Image.png" 
               alt="Gaurav Godambe's Resume - AI Consultant and Financial Expert" 
               className="w-full object-contain"
               width="1200"
               height="1553"
               loading="eager"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                console.error(`Failed to load resume image: ${target.src}`);
+                // Fallback to a placeholder if loading fails
+                target.src = 'https://placehold.co/1200x1553/e2e8f0/64748b?text=Resume';
+              }}
             />
           </div>
         </div>
