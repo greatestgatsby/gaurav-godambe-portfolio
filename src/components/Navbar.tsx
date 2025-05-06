@@ -30,6 +30,7 @@ const Navbar = () => {
     { name: 'Services', path: '/services' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Resume', path: '/resume' },
   ];
 
   return (
@@ -67,9 +68,6 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Button variant="primary" href="/contact" icon="arrow">
-            Hire Me
-          </Button>
         </nav>
 
         {/* Mobile Navigation */}
@@ -93,9 +91,6 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button variant="primary" href="/contact" icon="arrow" onClick={closeMenu}>
-              Hire Me
-            </Button>
           </nav>
         </div>
       </div>

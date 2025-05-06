@@ -1,22 +1,10 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Github, Mail, Download } from 'lucide-react';
+import { Linkedin, Github, Mail, ExternalLink } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  // Function to handle resume download
-  const handleResumeDownload = (e) => {
-    e.preventDefault();
-    // Create a direct link to the resume and trigger download
-    const link = document.createElement('a');
-    link.href = '/Gaurav Godambe Resume.pdf';
-    link.download = 'Gaurav Godambe Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
   
   return (
     <footer className="bg-navy-900 text-white py-12">
@@ -55,14 +43,13 @@ const Footer = () => {
               >
                 <Mail size={20} />
               </a>
-              <a 
-                href="/Gaurav Godambe Resume.pdf"
-                onClick={handleResumeDownload} 
+              <Link 
+                to="/resume"
                 className="text-white hover:text-accent-light transition-colors"
-                aria-label="Download Resume"
+                aria-label="View Resume"
               >
-                <Download size={20} />
-              </a>
+                <ExternalLink size={20} />
+              </Link>
             </div>
           </div>
           
@@ -98,6 +85,11 @@ const Footer = () => {
               <li>
                 <Link to="/contact" className="text-navy-300 hover:text-white transition-colors">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/resume" className="text-navy-300 hover:text-white transition-colors">
+                  Resume
                 </Link>
               </li>
             </ul>

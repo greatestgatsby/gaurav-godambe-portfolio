@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import BlogPostPage from "./pages/BlogPostPage";
 import Contact from "./pages/Contact";
 import Certifications from "./pages/Certifications";
+import Resume from "./pages/Resume";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/blog/:id" element={<BlogPostPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/certifications" element={<Certifications />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

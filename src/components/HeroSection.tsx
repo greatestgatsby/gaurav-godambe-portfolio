@@ -2,6 +2,7 @@
 import React from 'react';
 import Button from '@/components/ui/CustomButton';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 interface HeroSectionProps {
   className?: string;
@@ -28,20 +29,10 @@ const HeroSection = ({ className }: HeroSectionProps) => {
               </Button>
               <Button
                 variant="outline"
-                href="/Gaurav Godambe Resume.pdf"
-                icon="download"
-                onClick={(e) => {
-                  e.preventDefault();
-                  // Create a direct link to the resume and trigger download
-                  const link = document.createElement('a');
-                  link.href = '/Gaurav Godambe Resume.pdf';
-                  link.download = 'Gaurav Godambe Resume.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
+                href="/resume"
+                icon="external"
               >
-                Download Resume
+                View Resume
               </Button>
             </div>
           </div>
