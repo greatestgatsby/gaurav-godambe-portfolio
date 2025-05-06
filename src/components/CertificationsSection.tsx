@@ -108,6 +108,9 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
                       src={cert.imageUrl} 
                       alt={cert.title}
                       className="w-full h-full object-cover"
+                      width="400"
+                      height="300"
+                      loading="lazy"
                     />
                   )}
                 </div>
