@@ -36,7 +36,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Project Management Institute',
       date: 'April 13, 2025',
       category: 'AI',
-      image: '/placeholder.svg',
+      image: '/lovable-uploads/2847f3dd-30be-4687-930e-7807b07cbec4.png',
     },
     {
       id: 4,
