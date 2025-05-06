@@ -66,7 +66,7 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
       summary: 'Intelligent system for responding to RFPs and improving sales forecasting accuracy.',
       impact: 'Improved sales forecasting accuracy by 10%, reduced client onboarding time.',
       category: 'AI',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
       tech: 'AI, GPT-4, Power Automate',
     },
     {
