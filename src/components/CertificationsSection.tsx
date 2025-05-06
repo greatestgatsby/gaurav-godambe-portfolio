@@ -18,6 +18,7 @@ interface Certificate {
   issuer: string;
   date: string;
   category: string;
+  imageUrl?: string;
 }
 
 const CertificationsSection = ({ className, fullPage = false }: CertificationsSectionProps) => {
@@ -44,6 +45,7 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
       issuer: 'Project Management Institute',
       date: 'April 13, 2025',
       category: 'AI',
+      imageUrl: '/lovable-uploads/Generative AI Overview for Project Managers_image.png'
     },
     {
       id: 4,
@@ -97,7 +99,13 @@ const CertificationsSection = ({ className, fullPage = false }: CertificationsSe
             >
               <Card className="overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col">
                 <div className="relative aspect-[4/3] w-full bg-gray-100">
-                  {/* Image and PDF removed as requested */}
+                  {cert.imageUrl && (
+                    <img 
+                      src={cert.imageUrl} 
+                      alt={cert.title}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                 </div>
                 <CardContent className="flex-grow flex flex-col p-5">
                   <div className="mb-2 flex items-center justify-between">
