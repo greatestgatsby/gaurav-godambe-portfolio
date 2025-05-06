@@ -31,7 +31,7 @@ const HeroSection = ({ className }: HeroSectionProps) => {
               </Button>
               <Button
                 variant="outline"
-                href="/lovable-uploads/239f869e-852d-47d0-8a65-a5f9d323a788.png"
+                href="/Gaurav Godambe Resume.pdf"
                 icon="download"
                 download
               >
