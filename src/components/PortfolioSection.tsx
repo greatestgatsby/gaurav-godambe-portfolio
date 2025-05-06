@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import PortfolioCard from './PortfolioCard';
@@ -30,14 +29,14 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
       trending: true,
     },
     {
-      id: 8,
-      title: 'Healthcare Record Management System',
-      summary: 'Built a modern web app for a small clinic to manage patient records with an intuitive interface and secure data handling.',
-      impact: 'Reduced record retrieval time by 65% and improved staff productivity by 40%.',
-      category: 'Healthcare',
-      image: 'https://images.unsplash.com/photo-1587370560942-ad2a04eabb6d',
-      tech: 'React, TypeScript, Tailwind CSS, Supabase',
-      previewUrl: 'https://preview--clinic-record-central.lovable.app/',
+      id: 1,
+      title: 'Client Coverage Performance Dashboard',
+      summary: 'Real-time dashboard for tracking sales teams performance and client coverage incentives.',
+      impact: 'Saved $350K annually by building real-time Coverage Incentive dashboards for Sales teams.',
+      category: 'Sales',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
+      tech: 'Power BI, Excel Macros',
+      caseStudy: 'coverage-dashboard',
       trending: true,
     },
     {
@@ -52,14 +51,14 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
       trending: true,
     },
     {
-      id: 1,
-      title: 'Client Coverage Performance Dashboard',
-      summary: 'Real-time dashboard for tracking sales teams performance and client coverage incentives.',
-      impact: 'Saved $350K annually by building real-time Coverage Incentive dashboards for Sales teams.',
-      category: 'Sales',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-      tech: 'Power BI, Excel Macros',
-      caseStudy: 'coverage-dashboard',
+      id: 8,
+      title: 'Healthcare Record Management System',
+      summary: 'Built a modern web app for a small clinic to manage patient records with an intuitive interface and secure data handling.',
+      impact: 'Reduced record retrieval time by 65% and improved staff productivity by 40%.',
+      category: 'Healthcare',
+      image: 'https://images.unsplash.com/photo-1587370560942-ad2a04eabb6d',
+      tech: 'React, TypeScript, Tailwind CSS, Supabase',
+      previewUrl: 'https://preview--clinic-record-central.lovable.app/',
     },
     {
       id: 2,
@@ -223,4 +222,3 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
 };
 
 export default PortfolioSection;
-
