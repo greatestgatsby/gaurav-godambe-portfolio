@@ -43,6 +43,10 @@ const HeroSection = ({ className }: HeroSectionProps) => {
                   src="/lovable-uploads/a9dc63a9-5d11-466c-ad97-15a63e48b8ea.png"
                   alt="Professional portrait of Gaurav Godambe"
                   className="object-cover w-full h-full absolute inset-0"
+                  loading="eager"
+                  width="800"
+                  height="1000"
+                  fetchpriority="high"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-900/50 to-transparent"></div>
               </div>

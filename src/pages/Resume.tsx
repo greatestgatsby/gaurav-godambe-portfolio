@@ -21,6 +21,9 @@ const Resume = () => {
               src="/lovable-uploads/Resume Image.png" 
               alt="Gaurav Godambe's Resume - AI Consultant and Financial Expert" 
               className="w-full object-contain"
+              loading="lazy"
+              width="1200"
+              height="1553"
             />
           </div>
         </div>

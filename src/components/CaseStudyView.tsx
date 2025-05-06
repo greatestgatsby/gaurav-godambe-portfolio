@@ -41,6 +41,9 @@ const CaseStudyView = ({
             src={image} 
             alt={`${title} - ${client}`} 
             className="w-full h-auto rounded-lg shadow-md"
+            loading="lazy"
+            width="1200"
+            height="675"
           />
         </div>
       )}

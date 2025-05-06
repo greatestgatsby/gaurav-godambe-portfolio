@@ -33,6 +33,9 @@ const TestimonialCard = ({
                 src={avatarUrl || DEFAULT_AVATAR}
                 alt={author}
                 className="w-full h-full object-cover bg-black"
+                loading="lazy"
+                width="80"
+                height="80"
               />
               {/* AvatarFallback intentionally left out */}
             </Avatar>
@@ -59,4 +62,3 @@ const TestimonialCard = ({
 };
 
 export default TestimonialCard;
-

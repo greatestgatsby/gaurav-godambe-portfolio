@@ -77,6 +77,9 @@ const PortfolioCard = ({
           src={image}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+          width="640"
+          height="360"
         />
         <div className="absolute top-3 right-3 flex gap-2 items-center">
           {trending && (
