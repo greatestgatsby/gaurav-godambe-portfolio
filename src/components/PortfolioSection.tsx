@@ -3,19 +3,32 @@ import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import PortfolioCard from './PortfolioCard';
 import Button from '@/components/ui/CustomButton';
+import CaseStudyView from './CaseStudyView';
 
 interface PortfolioSectionProps {
   className?: string;
   fullPage?: boolean;
+  showCaseStudy?: string;
 }
 
-const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps) => {
+const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: PortfolioSectionProps) => {
   // Define project categories
-  const categories = ['All', 'Strategy', 'Sales', 'Product', 'AI', 'Automation', 'Healthcare'];
+  const categories = ['All', 'Strategy', 'Sales', 'Product', 'AI', 'Automation', 'Healthcare', 'Finance'];
   const [activeCategory, setActiveCategory] = useState('All');
 
   // Sample portfolio projects
   const projects = [
+    {
+      id: 9,
+      title: 'Client Profitability Framework',
+      summary: 'Designed and implemented a comprehensive client profitability framework for MSCI\'s Analytics business to enable data-driven pricing decisions.',
+      impact: 'Provided critical insights for commercial decision-making, optimized pricing models, and supported strategic account planning.',
+      category: 'Finance',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+      tech: 'Financial Modeling, Data Analytics, Excel, Power BI',
+      caseStudy: 'msci',
+      trending: true,
+    },
     {
       id: 8,
       title: 'Healthcare Record Management System',
@@ -102,6 +115,31 @@ const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps
   // Display all projects for full page, but limited set for homepage
   const displayedProjects = fullPage ? filteredProjects : filteredProjects.slice(0, 3);
 
+  // Case study data
+  const caseStudies = {
+    msci: {
+      title: "Building a Client Profitability Framework for MSCI's Analytics Business",
+      client: "MSCI",
+      summary: "Developed an off-system financial framework that helped product and sales teams understand client profitability and make informed pricing decisions.",
+      background: "During my tenure at MSCI, I led an initiative to design and implement a client profitability framework for the Analytics business line. This was an off-system project developed from scratch, aimed at helping the Product and Sales teams better understand the financial impact of each client relationship and make more informed pricing decisions.",
+      objective: "The core objective was to quantify the profitability of individual clients by aligning revenue with associated costs. This would enable the business to assess the value each client brought relative to the resources consumed, particularly in a complex environment where direct cost attribution was not previously tracked.",
+      approach: [
+        "The process involved multiple stages of data aggregation, metric alignment, and financial modeling.",
+        "Data Collection: I collated client-level run rate revenue and sales data, and gathered data on system usage — including compute time and storage consumption — to understand operational costs tied to each client.",
+        "Revenue Allocation: Revenue was allocated based on each client's run rate, providing a normalized view that captured ongoing business activity rather than just point-in-time transactions.",
+        "Expense Allocation: Direct costs related to infrastructure were allocated based on actual usage per client. Shared costs and corporate overheads were distributed evenly across all clients to ensure a balanced pro forma P&L. Sales & support costs were allocated proportionally using sales metrics and client engagement data where available.",
+        "Profitability Modeling: Using the allocated revenue and cost data, I constructed a pro forma Profit & Loss (P&L) statement for each client. This modeling provided a bottom-line view of client contribution, surfacing both highly profitable accounts and those with low or negative margins.",
+        "Dashboard Development: I created a dashboard to visualize key metrics and P&L outputs. The dashboard was used actively by Product and Sales teams to evaluate pricing strategies, identify clients where renegotiation might be necessary, and align product offerings with financial value derived."
+      ],
+      impact: "This profitability framework became a crucial tool for commercial decision-making. It provided transparency into the economics of individual client relationships, helped optimize pricing models, and supported strategic account planning. The model also laid the groundwork for potential integration into system-based reporting tools in the future.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+    }
+  };
+
+  if (showCaseStudy && caseStudies[showCaseStudy]) {
+    return <CaseStudyView {...caseStudies[showCaseStudy]} />;
+  }
+
   return (
     <section className={cn('py-16 md:py-24', className)}>
       <div className="container">
@@ -148,6 +186,7 @@ const PortfolioSection = ({ className, fullPage = false }: PortfolioSectionProps
                 image={project.image}
                 tech={project.tech}
                 previewUrl={project.previewUrl}
+                caseStudy={project.caseStudy}
                 trending={project.trending}
               />
             </div>

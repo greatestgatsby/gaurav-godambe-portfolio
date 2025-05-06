@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import Button from '@/components/ui/CustomButton';
+import { Link } from 'react-router-dom';
 import { TrendingUp } from 'lucide-react';
 
 interface PortfolioCardProps {
@@ -14,6 +15,7 @@ interface PortfolioCardProps {
   image: string;
   tech: string;
   previewUrl?: string;
+  caseStudy?: string;
   trending?: boolean;
   className?: string;
 }
@@ -26,6 +28,7 @@ const PortfolioCard = ({
   image,
   tech,
   previewUrl,
+  caseStudy,
   trending = false,
   className,
 }: PortfolioCardProps) => {
@@ -41,6 +44,10 @@ const PortfolioCard = ({
         return 'bg-orange-100 text-orange-800';
       case 'Automation':
         return 'bg-teal-100 text-teal-800';
+      case 'Healthcare':
+        return 'bg-red-100 text-red-800';
+      case 'Finance':
+        return 'bg-indigo-100 text-indigo-800';
       default:
         return 'bg-gray-100 text-gray-800';
     }
@@ -95,13 +102,20 @@ const PortfolioCard = ({
           </div>
         </div>
       </CardContent>
-      {previewUrl && (
-        <CardFooter className="pt-0 pb-4">
+      <CardFooter className="pt-0 pb-4 flex gap-2 flex-wrap">
+        {caseStudy && (
+          <Link to={`/portfolio/case-study/${caseStudy}`}>
+            <Button variant="primary" size="sm" icon="arrow">
+              View Case Study
+            </Button>
+          </Link>
+        )}
+        {previewUrl && (
           <Button variant="outline" size="sm" href={previewUrl} icon="external">
             Preview Site
           </Button>
-        </CardFooter>
-      )}
+        )}
+      </CardFooter>
     </Card>
   );
 };
