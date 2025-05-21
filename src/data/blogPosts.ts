@@ -65,7 +65,7 @@ export const blogPosts: BlogPostType[] = [
     id: 7,
     title: 'SBI Nifty200 Quality 30 Index Fund NFO: An In-Depth Analysis',
     excerpt: 'A comprehensive look at the SBI Nifty200 Quality 30 Index Fund, its features, performance potential, and suitability for investors.',
-    date: 'May 15, 2025',
+    date: 'May 21, 2025',
     image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11',
     category: 'Investment Analysis',
     content: 'nifty200-quality'

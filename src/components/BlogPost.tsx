@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { BlogPostType } from '@/data/blogPosts';
@@ -128,7 +129,6 @@ const BlogPost = ({ className, post }: BlogPostProps) => {
                         outerRadius={80}
                         fill="#8884d8"
                         dataKey="value"
-                        nameKey="name"
                         label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(1)}%`}
                       >
                         {marketCapData.map((entry, index) => (
@@ -156,7 +156,7 @@ const BlogPost = ({ className, post }: BlogPostProps) => {
                       <XAxis type="number" domain={[0, 'dataMax']} />
                       <YAxis type="category" dataKey="name" width={100} />
                       <Tooltip formatter={(value) => `${value}%`} />
-                      <Bar dataKey="value" nameKey="name">
+                      <Bar dataKey="value">
                         {sectorData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={entry.fill} />
                         ))}
@@ -205,7 +205,7 @@ const BlogPost = ({ className, post }: BlogPostProps) => {
                     <XAxis dataKey="name" />
                     <YAxis domain={[0, 20]} />
                     <Tooltip formatter={(value) => `${value}%`} />
-                    <Bar dataKey="value" nameKey="name">
+                    <Bar dataKey="value">
                       {cagrData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={entry.fill} />
                       ))}
