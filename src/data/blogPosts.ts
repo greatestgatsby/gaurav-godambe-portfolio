@@ -61,13 +61,4 @@ export const blogPosts: BlogPostType[] = [
     image: 'https://images.unsplash.com/photo-1605664041952-4a2855d0434b',
     category: 'Digital Transformation',
   },
-  {
-    id: 7,
-    title: 'AI and the Future of FP&A: A 2023-2028 Outlook',
-    excerpt: 'How AI will reshape financial planning and analysis over the next five years, from predictive forecasting to automated insight generation.',
-    date: 'May 21, 2025',
-    image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d',
-    category: 'AI in Finance',
-    content: 'gemini-report'
-  },
 ];
