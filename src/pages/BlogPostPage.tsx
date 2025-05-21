@@ -31,8 +31,11 @@ const BlogPostPage = () => {
         <div className="bg-gradient-to-b from-accent/10 to-transparent py-10">
           <div className="container text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
-              Blog Post
+              {post.title}
             </h1>
+            <p className="text-lg text-navy-600">
+              {post.date} • {post.category}
+            </p>
           </div>
         </div>
         <section className="py-12">
