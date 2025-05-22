@@ -13,19 +13,14 @@ const BusinessCategoryCard = () => {
   const [businessDescription, setBusinessDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<{ primary: string; additional: string[] } | null>(null);
-  const [apiKey, setApiKey] = useState('');
-  const [showApiKeyInput, setShowApiKeyInput] = useState(false);
+  // Hard-coded API key - you'll need to replace this with the actual key provided by the user
+  const apiKey = "YOUR_OPENAI_API_KEY_HERE";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!businessName || !businessDescription) {
       toast.error("Please enter both business name and description");
-      return;
-    }
-
-    if (!apiKey) {
-      setShowApiKeyInput(true);
       return;
     }
 
@@ -85,8 +80,7 @@ const BusinessCategoryCard = () => {
     } catch (error) {
       console.error("Error calling OpenAI API:", error);
       if (error instanceof Error && error.message.includes('401')) {
-        toast.error("Invalid API key. Please check your OpenAI API key and try again.");
-        setShowApiKeyInput(true);
+        toast.error("API key validation failed. Please contact support.");
       } else {
         toast.error("Failed to generate categories. Please try again later.");
       }
@@ -128,23 +122,6 @@ const BusinessCategoryCard = () => {
                 className="mt-1 resize-none h-24"
               />
             </div>
-            
-            {showApiKeyInput && (
-              <div className="pt-2">
-                <Label htmlFor="api-key" className="text-accent font-medium">OpenAI API Key</Label>
-                <Input
-                  id="api-key"
-                  type="password"
-                  placeholder="Enter your OpenAI API key"
-                  value={apiKey}
-                  onChange={(e) => setApiKey(e.target.value)}
-                  className="mt-1 border-accent/50"
-                />
-                <p className="text-xs text-navy-600 mt-1">
-                  Your API key is not stored on our servers and is used only for this request.
-                </p>
-              </div>
-            )}
             
             <Button 
               type="submit"
