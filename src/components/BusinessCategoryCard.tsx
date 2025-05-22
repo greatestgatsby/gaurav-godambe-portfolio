@@ -150,7 +150,6 @@ const BusinessCategoryCard = () => {
               type="submit"
               variant="primary"
               className="w-full mt-4"
-              disabled={isLoading}
             >
               {isLoading ? (
                 <>
