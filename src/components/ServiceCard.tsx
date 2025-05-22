@@ -76,18 +76,6 @@ const ServiceCard = ({
           ))}
         </div>
       </CardContent>
-      <CardFooter className="pt-4">
-        <a
-          href="/contact"
-          className={cn(
-            "text-accent hover:text-accent-dark transition-colors inline-flex items-center text-sm font-medium",
-            status === 'coming-soon' && 'pointer-events-none opacity-50'
-          )}
-        >
-          Request a Quote
-          <ChevronRight className="ml-1 h-4 w-4" />
-        </a>
-      </CardFooter>
     </Card>
   );
 };

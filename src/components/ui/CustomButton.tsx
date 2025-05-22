@@ -1,10 +1,13 @@
+
 import React from 'react';
 import { Button as ShadcnButton } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { ArrowRight, Download, ExternalLink } from 'lucide-react';
+
 type ButtonVariant = 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'primary';
 type ButtonSize = 'default' | 'sm' | 'lg' | 'icon';
 type ButtonIcon = 'arrow' | 'download' | 'external' | 'none';
+
 interface ButtonProps {
   children: React.ReactNode;
   variant?: ButtonVariant;
@@ -16,6 +19,7 @@ interface ButtonProps {
   download?: boolean;
   type?: 'button' | 'submit' | 'reset';
 }
+
 const Button = ({
   children,
   variant = 'default',
@@ -39,19 +43,35 @@ const Button = ({
         return null;
     }
   };
-  const buttonContent = <>
+
+  const buttonContent = (
+    <>
       {children}
       {getIcon()}
-    </>;
+    </>
+  );
+
   if (href) {
-    return <ShadcnButton variant={variant as any} size={size} className={cn('rounded-md', className)} asChild>
+    return (
+      <ShadcnButton variant={variant as any} size={size} className={cn('rounded-md', className)} asChild>
         <a href={href} download={download} onClick={onClick}>
           {buttonContent}
         </a>
-      </ShadcnButton>;
+      </ShadcnButton>
+    );
   }
-  return <ShadcnButton variant={variant as any} size={size} onClick={onClick} type={type} className="bg-indigo-600 hover:bg-indigo-500 rounded-sm text-slate-50">
+
+  return (
+    <ShadcnButton
+      variant={variant as any}
+      size={size}
+      onClick={onClick}
+      type={type}
+      className={cn("rounded-sm", variant === "primary" && "bg-indigo-600 hover:bg-indigo-500 text-slate-50", className)}
+    >
       {buttonContent}
-    </ShadcnButton>;
+    </ShadcnButton>
+  );
 };
+
 export default Button;

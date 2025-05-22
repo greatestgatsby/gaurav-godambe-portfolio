@@ -119,9 +119,24 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
           ))}
 
           {fullPage && (
-            <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
-              <BusinessCategoryCard />
-            </div>
+            <>
+              <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                <ServiceCard
+                  title="Finance Transformation & FP&A Consulting"
+                  description="Expert guidance on forecasting, annual operating planning, P&L management, and KPI reporting systems to optimize your financial operations."
+                  icon="chart-bar"
+                  highlights={[
+                    'Financial Process Optimization',
+                    'Budget & Forecast Modeling',
+                    'P&L Management Frameworks',
+                    'KPI Design & Implementation',
+                  ]}
+                />
+              </div>
+              <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                <BusinessCategoryCard />
+              </div>
+            </>
           )}
         </div>
 
