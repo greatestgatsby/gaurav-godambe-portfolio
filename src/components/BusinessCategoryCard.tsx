@@ -9,7 +9,7 @@ import Button from '@/components/ui/CustomButton';
 import { toast } from '@/components/ui/sonner';
 
 // Replace with your actual OpenAI API key
-const OPENAI_API_KEY = 'sk-your-actual-api-key-here';
+const OPENAI_API_KEY = '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';
 
 const BusinessCategoryCard = () => {
   const [businessName, setBusinessName] = useState('');
