@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import ServiceCard from './ServiceCard';
@@ -11,18 +12,6 @@ interface ServicesSectionProps {
 
 const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) => {
   const services = [
-    {
-      id: 6,
-      title: 'Google My Business Category Finder',
-      description: 'Find the optimal categories for your business to improve local SEO and visibility in Google search results.',
-      icon: 'brain',
-      highlights: [
-        'Primary Category Identification',
-        'Additional Category Suggestions',
-        'Local SEO Optimization',
-        'Business Visibility Enhancement',
-      ],
-    },
     {
       id: 2,
       title: 'AI-Powered Automation for Finance Teams',
@@ -48,15 +37,15 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
       ],
     },
     {
-      id: 4,
-      title: 'Program & Project Management',
-      description: 'End-to-end program management services with Agile execution, stakeholder alignment, and governance structures to ensure successful delivery.',
-      icon: 'clipboard-list',
+      id: 6,
+      title: 'Google My Business Category Finder',
+      description: 'Find the optimal categories for your business to improve local SEO and visibility in Google search results.',
+      icon: 'brain',
       highlights: [
-        'Agile/Waterfall Methodologies',
-        'Cross-functional Coordination',
-        'Governance Frameworks',
-        'Stakeholder Management',
+        'Primary Category Identification',
+        'Additional Category Suggestions',
+        'Local SEO Optimization',
+        'Business Visibility Enhancement',
       ],
     },
     {
@@ -81,6 +70,18 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
         'Performance Metrics Design',
         'Benchmarking & Analysis',
         'Continuous Improvement Programs',
+      ],
+    },
+    {
+      id: 4,
+      title: 'Program & Project Management',
+      description: 'End-to-end program management services with Agile execution, stakeholder alignment, and governance structures to ensure successful delivery.',
+      icon: 'clipboard-list',
+      highlights: [
+        'Agile/Waterfall Methodologies',
+        'Cross-functional Coordination',
+        'Governance Frameworks',
+        'Stakeholder Management',
       ],
     },
   ];
@@ -120,9 +121,6 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
           {fullPage && (
             <>
               <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                <BusinessCategoryCard />
-              </div>
-              <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
                 <ServiceCard
                   title="Finance Transformation & FP&A Consulting"
                   description="Expert guidance on forecasting, annual operating planning, P&L management, and KPI reporting systems to optimize your financial operations."
@@ -134,6 +132,9 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
                     'KPI Design & Implementation',
                   ]}
                 />
+              </div>
+              <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                <BusinessCategoryCard />
               </div>
             </>
           )}
