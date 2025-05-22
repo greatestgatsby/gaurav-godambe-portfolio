@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import ServiceCard from './ServiceCard';
@@ -14,14 +13,14 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
   const services = [
     {
       id: 6,
-      title: 'AI Consulting & Implementation',
-      description: 'Strategic guidance on leveraging AI technologies to transform your business operations. From assessment to implementation of custom AI solutions.',
+      title: 'Google My Business Category Finder',
+      description: 'Find the optimal categories for your business to improve local SEO and visibility in Google search results.',
       icon: 'brain',
       highlights: [
-        'ChatGPT Integration',
-        'AI Workflow Automation',
-        'Custom Chat Bots for businesses',
-        'AI agent for booking appointments',
+        'Primary Category Identification',
+        'Additional Category Suggestions',
+        'Local SEO Optimization',
+        'Business Visibility Enhancement',
       ],
     },
     {
@@ -37,19 +36,19 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
       ],
     },
     {
-      id: 1,
-      title: 'Finance Transformation & FP&A Consulting',
-      description: 'Expert guidance on forecasting, annual operating planning, P&L management, and KPI reporting systems to optimize your financial operations.',
-      icon: 'chart-bar',
+      id: 3,
+      title: 'AI Consulting & Implementation',
+      description: 'Strategic guidance on leveraging AI technologies to transform your business operations. From assessment to implementation of custom AI solutions.',
+      icon: 'brain',
       highlights: [
-        'Financial Process Optimization',
-        'Budget & Forecast Modeling',
-        'P&L Management Frameworks',
-        'KPI Design & Implementation',
+        'ChatGPT Integration',
+        'AI Workflow Automation',
+        'Custom Chat Bots for businesses',
+        'AI agent for booking appointments',
       ],
     },
     {
-      id: 3,
+      id: 4,
       title: 'Program & Project Management',
       description: 'End-to-end program management services with Agile execution, stakeholder alignment, and governance structures to ensure successful delivery.',
       icon: 'clipboard-list',
@@ -61,7 +60,7 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
       ],
     },
     {
-      id: 4,
+      id: 5,
       title: 'Data Visualization & BI Development',
       description: 'Build custom Power BI, Qlik, or Tableau dashboards that transform raw data into actionable insights for better decision-making.',
       icon: 'presentation-chart-bar',
@@ -73,7 +72,7 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
       ],
     },
     {
-      id: 5,
+      id: 1,
       title: 'Performance & Cost Optimization Strategy',
       description: 'Develop metrics design, cost-saving frameworks, and operational benchmarking to drive efficiencies and reduce expenses.',
       icon: 'chart-line',
@@ -121,6 +120,9 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
           {fullPage && (
             <>
               <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                <BusinessCategoryCard />
+              </div>
+              <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
                 <ServiceCard
                   title="Finance Transformation & FP&A Consulting"
                   description="Expert guidance on forecasting, annual operating planning, P&L management, and KPI reporting systems to optimize your financial operations."
@@ -132,9 +134,6 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
                     'KPI Design & Implementation',
                   ]}
                 />
-              </div>
-              <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                <BusinessCategoryCard />
               </div>
             </>
           )}
