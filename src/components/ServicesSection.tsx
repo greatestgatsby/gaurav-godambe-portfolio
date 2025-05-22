@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import ServiceCard from './ServiceCard';
@@ -34,18 +33,6 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
         'AI Workflow Automation',
         'Custom Chat Bots for businesses',
         'AI agent for booking appointments',
-      ],
-    },
-    {
-      id: 6,
-      title: 'Google My Business Category Finder',
-      description: 'Find the optimal categories for your business to improve local SEO and visibility in Google search results.',
-      icon: 'brain',
-      highlights: [
-        'Primary Category Identification',
-        'Additional Category Suggestions',
-        'Local SEO Optimization',
-        'Business Visibility Enhancement',
       ],
     },
     {
@@ -113,7 +100,7 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
                 description={service.description}
                 icon={service.icon}
                 highlights={service.highlights}
-                className={service.id === 6 || service.id === 2 ? "border-2 border-accent shadow-accent/20" : ""}
+                className={service.id === 2 ? "border-2 border-accent shadow-accent/20" : ""}
               />
             </div>
           ))}
