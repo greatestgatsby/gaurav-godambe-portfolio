@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Eye, EyeOff } from 'lucide-react';
 import Button from '@/components/ui/CustomButton';
 import { toast } from '@/components/ui/sonner';
 
@@ -13,14 +13,43 @@ const BusinessCategoryCard = () => {
   const [businessDescription, setBusinessDescription] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<{ primary: string; additional: string[] } | null>(null);
-  // Hard-coded API key - you'll need to replace this with the actual key provided by the user
-  const apiKey = "YOUR_OPENAI_API_KEY_HERE";
+  const [apiKey, setApiKey] = useState('');
+  const [showApiKey, setShowApiKey] = useState(false);
+  const [apiKeyError, setApiKeyError] = useState<string | null>(null);
+
+  const toggleApiKeyVisibility = () => {
+    setShowApiKey(!showApiKey);
+  };
+
+  const validateApiKey = (key: string) => {
+    if (!key) return "API key is required";
+    if (!key.startsWith('sk-')) return "Invalid API key format (should start with 'sk-')";
+    if (key.length < 20) return "API key appears too short";
+    return null;
+  };
+
+  const handleApiKeyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const key = e.target.value;
+    setApiKey(key);
+    
+    // Clear error when user starts typing
+    if (apiKeyError) {
+      setApiKeyError(null);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!businessName || !businessDescription) {
       toast.error("Please enter both business name and description");
+      return;
+    }
+
+    // Validate API key
+    const keyError = validateApiKey(apiKey);
+    if (keyError) {
+      setApiKeyError(keyError);
       return;
     }
 
@@ -51,6 +80,9 @@ const BusinessCategoryCard = () => {
       });
 
       if (!response.ok) {
+        if (response.status === 401) {
+          throw new Error('Invalid API key');
+        }
         throw new Error(`API request failed with status ${response.status}`);
       }
 
@@ -80,7 +112,8 @@ const BusinessCategoryCard = () => {
     } catch (error) {
       console.error("Error calling OpenAI API:", error);
       if (error instanceof Error && error.message.includes('401')) {
-        toast.error("API key validation failed. Please contact support.");
+        setApiKeyError("Invalid API key. Please check and try again.");
+        toast.error("API key validation failed. Please provide a valid API key.");
       } else {
         toast.error("Failed to generate categories. Please try again later.");
       }
@@ -121,6 +154,42 @@ const BusinessCategoryCard = () => {
                 onChange={(e) => setBusinessDescription(e.target.value)}
                 className="mt-1 resize-none h-24"
               />
+            </div>
+            <div>
+              <Label htmlFor="api-key" className="flex items-center justify-between">
+                <span>OpenAI API Key</span>
+                <button 
+                  type="button"
+                  onClick={toggleApiKeyVisibility}
+                  className="text-xs text-accent hover:underline flex items-center"
+                >
+                  {showApiKey ? (
+                    <>
+                      <EyeOff className="h-3.5 w-3.5 mr-1" /> Hide
+                    </>
+                  ) : (
+                    <>
+                      <Eye className="h-3.5 w-3.5 mr-1" /> Show
+                    </>
+                  )}
+                </button>
+              </Label>
+              <div className="mt-1 relative">
+                <Input
+                  id="api-key"
+                  type={showApiKey ? "text" : "password"}
+                  placeholder="sk-..."
+                  value={apiKey}
+                  onChange={handleApiKeyChange}
+                  className={`${apiKeyError ? 'border-destructive' : ''}`}
+                />
+              </div>
+              {apiKeyError && (
+                <p className="text-xs text-destructive mt-1">{apiKeyError}</p>
+              )}
+              <p className="text-xs text-navy-600 mt-1">
+                Your API key is only used for this request and is not stored on our servers.
+              </p>
             </div>
             
             <Button 
