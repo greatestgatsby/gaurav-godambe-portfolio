@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Loader2 } from 'lucide-react';
+import { Loader2, RefreshCw } from 'lucide-react';
 import Button from '@/components/ui/CustomButton';
 import { toast } from '@/components/ui/sonner';
 
@@ -86,6 +86,13 @@ const BusinessCategoryCard = () => {
     }
   };
 
+  const handleReset = () => {
+    setBusinessName('');
+    setBusinessDescription('');
+    setResults(null);
+    toast.info("Form has been reset");
+  };
+
   return (
     <Card className="overflow-hidden border-2 border-accent shadow-accent/20 h-full">
       <CardHeader className="bg-gradient-to-r from-accent/20 to-accent/5 pb-6">
@@ -120,20 +127,32 @@ const BusinessCategoryCard = () => {
               />
             </div>
             
-            <Button 
-              type="submit"
-              variant="primary"
-              className="w-full mt-4"
-            >
-              {isLoading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> 
-                  Analyzing...
-                </>
-              ) : (
-                "Find Categories"
-              )}
-            </Button>
+            <div className="flex gap-2 mt-4">
+              <Button 
+                type="submit"
+                variant="primary"
+                className="flex-1"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> 
+                    Analyzing...
+                  </>
+                ) : (
+                  "Find Categories"
+                )}
+              </Button>
+              
+              <Button 
+                type="button"
+                variant="outline"
+                onClick={handleReset}
+                className="px-4"
+              >
+                <RefreshCw className="h-4 w-4 mr-2" />
+                Reset
+              </Button>
+            </div>
           </div>
         </form>
 
