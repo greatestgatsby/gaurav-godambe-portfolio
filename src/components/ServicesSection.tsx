@@ -3,6 +3,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import ServiceCard from './ServiceCard';
 import Button from '@/components/ui/CustomButton';
+import BusinessCategoryCard from './BusinessCategoryCard';
 
 interface ServicesSectionProps {
   className?: string;
@@ -116,6 +117,12 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
               />
             </div>
           ))}
+
+          {fullPage && (
+            <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <BusinessCategoryCard />
+            </div>
+          )}
         </div>
 
         {!fullPage && (
