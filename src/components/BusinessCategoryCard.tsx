@@ -40,11 +40,11 @@ const BusinessCategoryCard = () => {
           messages: [
             {
               role: "system",
-              content: "You are an expert in Google My Business optimization. Your task is to suggest the most appropriate primary category and 3-5 additional categories for a business to use in their Google My Business profile to optimize their SEO. Format your response as JSON with 'primary' (string) and 'additional' (array of strings) fields."
+              content: "You are an expert in Google My Business optimization. Your task is to suggest the most appropriate primary category and 10 additional categories for a business to use in their Google My Business profile to optimize their SEO. Format your response as JSON with 'primary' (string) and 'additional' (array of strings) fields."
             },
             {
               role: "user",
-              content: `Business Name: ${businessName}\nBusiness Description: ${businessDescription}\nPlease suggest the most appropriate Google My Business primary category and additional categories for this business.`
+              content: `Business Name: ${businessName}\nBusiness Description: ${businessDescription}\nPlease suggest the most appropriate Google My Business primary category and 10 additional categories for this business.`
             }
           ],
           response_format: { "type": "json_object" }
