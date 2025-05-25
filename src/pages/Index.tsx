@@ -8,6 +8,7 @@ import PortfolioSection from '@/components/PortfolioSection';
 import ServicesSection from '@/components/ServicesSection';
 import BlogSection from '@/components/BlogSection';
 import ContactSection from '@/components/ContactSection';
+import AudioPlayer from '@/components/AudioPlayer';
 import { Helmet } from 'react-helmet';
 
 const Index = () => {
@@ -30,6 +31,7 @@ const Index = () => {
         <ContactSection />
       </main>
       <Footer />
+      <AudioPlayer />
     </div>
   );
 };
