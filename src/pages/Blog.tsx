@@ -31,6 +31,30 @@ const Blog = () => {
             <BlogSection fullPage />
           </div>
         </section>
+        
+        {/* Contact Form Section */}
+        <section className="py-16 bg-white">
+          <div className="container">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+                Stay Connected
+              </h2>
+              <p className="text-xl text-navy-600 max-w-2xl mx-auto">
+                Get in touch or subscribe to my newsletter for the latest insights on AI in finance and business optimization.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <iframe
+                src="https://gauravg83.app.n8n.cloud/form/486513e5-52b2-411a-893d-eb9e5a5e3720"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                className="rounded-lg shadow-lg"
+                title="Contact Form"
+              />
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
