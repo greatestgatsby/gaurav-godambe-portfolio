@@ -61,6 +61,19 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                       </a>
                     </div>
                   </div>
+
+                  <div className="flex items-center">
+                    <Mail className="h-6 w-6 text-accent mr-4 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-navy-800">Email (Alternate)</h4>
+                      <a 
+                        href="mailto:gauravg8316@gmail.com" 
+                        className="text-navy-600 hover:text-accent transition-colors"
+                      >
+                        gauravg8316@gmail.com
+                      </a>
+                    </div>
+                  </div>
                   
                   <div className="flex items-center">
                     <Linkedin className="h-6 w-6 text-accent mr-4 flex-shrink-0" />
