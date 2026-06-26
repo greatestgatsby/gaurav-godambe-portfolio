@@ -321,14 +321,13 @@ function About() {
         <motion.div
           {...fadeUp}
           transition={{ ...fadeUp.transition, delay: 0.1 }}
-          className="aspect-[4/5] w-full overflow-hidden rounded-xl border border-line bg-surface"
+          className="aspect-[4/5] w-full overflow-hidden rounded-xl border border-line bg-gradient-to-br from-surface to-ink p-8 flex items-end"
         >
-          <img
-            src="/lovable-uploads/95e57d80-9efe-414e-9e44-9beb91c30d10.png"
-            alt="Gaurav Godambe"
-            className="h-full w-full object-cover"
-            loading="lazy"
-          />
+          <div className="font-mono text-xs text-fog">
+            <div className="text-brand mb-2">// gaurav.godambe</div>
+            <div>15+ yrs · FP&amp;A · AI builds</div>
+            <div className="mt-1">based in india · global clients</div>
+          </div>
         </motion.div>
       </div>
     </section>
