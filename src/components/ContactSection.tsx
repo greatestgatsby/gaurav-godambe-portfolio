@@ -35,10 +35,10 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
     <section className={cn('py-12 md:py-16', className)}>
       <div className="container">
         <div className="text-center mb-8">
-          <h2 className={cn(fullPage ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl", "font-bold text-navy-900")}>
+          <h2 className={cn(fullPage ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl", "font-bold text-bone")}>
             Get In Touch
           </h2>
-          <p className="text-xl text-navy-600 max-w-3xl mx-auto mt-4">
+          <p className="text-xl text-fog max-w-3xl mx-auto mt-4">
             Have a project in mind or want to discuss how I can help your organization? 
             Feel free to reach out through any of the following channels.
           </p>
@@ -50,12 +50,12 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
               <CardContent className="p-6 md:p-8">
                 <div className="space-y-6">
                   <div className="flex items-center">
-                    <Mail className="h-6 w-6 text-accent mr-4 flex-shrink-0" />
+                    <Mail className="h-6 w-6 text-brand mr-4 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-navy-800">Email</h4>
+                      <h4 className="font-semibold text-bone">Email</h4>
                       <a 
                         href="mailto:Gaurav.g83@gmail.com" 
-                        className="text-navy-600 hover:text-accent transition-colors"
+                        className="text-fog hover:text-brand transition-colors"
                       >
                         Gaurav.g83@gmail.com
                       </a>
@@ -63,12 +63,12 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                   </div>
 
                   <div className="flex items-center">
-                    <Mail className="h-6 w-6 text-accent mr-4 flex-shrink-0" />
+                    <Mail className="h-6 w-6 text-brand mr-4 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-navy-800">Email (Alternate)</h4>
+                      <h4 className="font-semibold text-bone">Email (Alternate)</h4>
                       <a 
                         href="mailto:gauravg8316@gmail.com" 
-                        className="text-navy-600 hover:text-accent transition-colors"
+                        className="text-fog hover:text-brand transition-colors"
                       >
                         gauravg8316@gmail.com
                       </a>
@@ -76,14 +76,14 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                   </div>
                   
                   <div className="flex items-center">
-                    <Linkedin className="h-6 w-6 text-accent mr-4 flex-shrink-0" />
+                    <Linkedin className="h-6 w-6 text-brand mr-4 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-navy-800">LinkedIn</h4>
+                      <h4 className="font-semibold text-bone">LinkedIn</h4>
                       <a 
                         href="https://www.linkedin.com/in/gaurav-godambe-506b41b/" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-navy-600 hover:text-accent transition-colors"
+                        className="text-fog hover:text-brand transition-colors"
                       >
                         Gaurav Godambe
                       </a>
@@ -91,20 +91,20 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                   </div>
                   
                   <div className="flex items-center">
-                    <MapPin className="h-6 w-6 text-accent mr-4 flex-shrink-0" />
+                    <MapPin className="h-6 w-6 text-brand mr-4 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-navy-800">Location</h4>
-                      <p className="text-navy-600">Mumbai, India</p>
+                      <h4 className="font-semibold text-bone">Location</h4>
+                      <p className="text-fog">Mumbai, India</p>
                     </div>
                   </div>
 
                   <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                     <DialogTrigger asChild>
                       <div className="flex items-center cursor-pointer group">
-                        <Calendar className="h-6 w-6 text-accent mr-4 flex-shrink-0 group-hover:text-accent-600 transition-colors" />
+                        <Calendar className="h-6 w-6 text-brand mr-4 flex-shrink-0 group-hover:text-brand-600 transition-colors" />
                         <div>
-                          <h4 className="font-semibold text-navy-800 group-hover:text-accent transition-colors">Schedule a Meeting</h4>
-                          <p className="text-navy-600 group-hover:text-navy-800 transition-colors">Book a 30-minute consultation</p>
+                          <h4 className="font-semibold text-bone group-hover:text-brand transition-colors">Schedule a Meeting</h4>
+                          <p className="text-fog group-hover:text-bone transition-colors">Book a 30-minute consultation</p>
                         </div>
                       </div>
                     </DialogTrigger>
@@ -119,19 +119,19 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                 </div>
                 
                 {fullPage && (
-                  <div className="mt-8 pt-6 border-t border-navy-100 flex justify-center space-x-4">
+                  <div className="mt-8 pt-6 border-t border-line flex justify-center space-x-4">
                     <a 
                       href="https://www.linkedin.com/in/gaurav-godambe-506b41b/" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-navy-100 hover:bg-navy-200 text-navy-800 p-3 rounded-full transition-colors"
+                      className="bg-surface hover:bg-surface text-bone p-3 rounded-full transition-colors"
                       aria-label="LinkedIn"
                     >
                       <Linkedin className="h-5 w-5" />
                     </a>
                     <a 
                       href="mailto:Gaurav.g83@gmail.com" 
-                      className="bg-navy-100 hover:bg-navy-200 text-navy-800 p-3 rounded-full transition-colors"
+                      className="bg-surface hover:bg-surface text-bone p-3 rounded-full transition-colors"
                       aria-label="Email"
                     >
                       <Mail className="h-5 w-5" />
@@ -144,8 +144,8 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
             <Card className="shadow-lg h-full">
               <CardContent className="p-6 md:p-8 h-full flex flex-col justify-center items-center">
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-semibold text-navy-800 mb-2">Ready to Chat?</h3>
-                  <p className="text-navy-600">Click the calendar option to schedule a meeting or send me a direct message.</p>
+                  <h3 className="text-2xl font-semibold text-bone mb-2">Ready to Chat?</h3>
+                  <p className="text-fog">Click the calendar option to schedule a meeting or send me a direct message.</p>
                 </div>
                 
                 <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
@@ -154,7 +154,7 @@ const ContactSection = ({ className, fullPage = false }: ContactSectionProps) =>
                       variant="default" 
                       size="lg" 
                       icon="arrow"
-                      className="bg-accent hover:bg-accent/90 text-white"
+                      className="bg-brand hover:bg-brand/90 text-white"
                     >
                       Schedule a Meeting
                     </Button>

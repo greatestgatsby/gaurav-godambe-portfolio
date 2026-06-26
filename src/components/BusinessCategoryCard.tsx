@@ -94,9 +94,9 @@ const BusinessCategoryCard = () => {
   };
 
   return (
-    <Card className="overflow-hidden border-2 border-accent shadow-accent/20 h-full">
-      <CardHeader className="bg-gradient-to-r from-accent/20 to-accent/5 pb-6">
-        <CardTitle className="text-xl font-bold text-navy-900">
+    <Card className="overflow-hidden border-2 border-brand shadow-accent/20 h-full">
+      <CardHeader className="bg-gradient-to-r from-brand/15 to-accent/5 pb-6">
+        <CardTitle className="text-xl font-bold text-bone">
           Google My Business Category Finder
         </CardTitle>
         <CardDescription>
@@ -157,17 +157,17 @@ const BusinessCategoryCard = () => {
         </form>
 
         {results && (
-          <div className="mt-6 p-4 bg-navy-50 rounded-md border border-navy-200">
-            <h4 className="font-semibold text-navy-900 mb-2">Recommended Categories:</h4>
+          <div className="mt-6 p-4 bg-surface/40 rounded-md border border-line">
+            <h4 className="font-semibold text-bone mb-2">Recommended Categories:</h4>
             <div className="mb-4">
-              <p className="text-sm text-navy-600 mb-1">Primary Category:</p>
-              <p className="font-medium text-accent">{results.primary}</p>
+              <p className="text-sm text-fog mb-1">Primary Category:</p>
+              <p className="font-medium text-brand">{results.primary}</p>
             </div>
             <div>
-              <p className="text-sm text-navy-600 mb-1">Additional Categories:</p>
+              <p className="text-sm text-fog mb-1">Additional Categories:</p>
               <ul className="list-disc pl-5">
                 {results.additional.map((category, idx) => (
-                  <li key={idx} className="text-navy-800">{category}</li>
+                  <li key={idx} className="text-bone">{category}</li>
                 ))}
               </ul>
             </div>

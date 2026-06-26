@@ -76,14 +76,14 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
   const displayedServices = fullPage ? services : services.slice(0, 3);
 
   return (
-    <section className={cn('py-16 md:py-24 bg-navy-50', className)}>
+    <section className={cn('py-16 md:py-24 bg-surface/40', className)}>
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className={cn(fullPage ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl", "font-bold text-navy-900 mb-6")}>
+          <h2 className={cn(fullPage ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl", "font-bold text-bone mb-6")}>
             {fullPage ? 'Services I Offer' : 'My Services'}
           </h2>
-          <p className="text-xl text-navy-600 max-w-3xl mx-auto">
-            Specialized expertise to help your business thrive through <span className="text-accent font-medium">AI integration</span>, financial optimization,
+          <p className="text-xl text-fog max-w-3xl mx-auto">
+            Specialized expertise to help your business thrive through <span className="text-brand font-medium">AI integration</span>, financial optimization,
             technology integration, and strategic guidance.
           </p>
         </div>
@@ -100,7 +100,7 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
                 description={service.description}
                 icon={service.icon}
                 highlights={service.highlights}
-                className={service.id === 2 ? "border-2 border-accent shadow-accent/20" : ""}
+                className={service.id === 2 ? "border-2 border-brand shadow-accent/20" : ""}
               />
             </div>
           ))}
@@ -137,10 +137,10 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
 
         {fullPage && (
           <div className="mt-20 text-center">
-            <div className="bg-white rounded-xl p-8 md:p-12 shadow-lg max-w-4xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold text-navy-900 mb-6">Ready to Work Together?</h3>
-              <p className="text-lg text-navy-600 mb-8">
-                Have a specific project in mind or need customized <span className="text-accent font-medium">AI solutions</span>? Let's discuss how I can help
+            <div className="bg-surface/60 border border-line rounded-xl p-8 md:p-12 max-w-4xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-bold text-bone mb-6">Ready to Work Together?</h3>
+              <p className="text-lg text-fog mb-8">
+                Have a specific project in mind or need customized <span className="text-brand font-medium">AI solutions</span>? Let's discuss how I can help
                 you transform your operations and drive business growth.
               </p>
               <Button variant="primary" href="/contact" icon="arrow" size="lg">

@@ -27,13 +27,13 @@ const CaseStudyView = ({
 }: CaseStudyViewProps) => {
   return (
     <div className="container max-w-4xl mx-auto py-8">
-      <Link to="/portfolio" className="inline-flex items-center text-accent hover:text-accent-dark mb-6">
+      <Link to="/portfolio" className="inline-flex items-center text-brand hover:text-brand mb-6">
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back to all projects
       </Link>
       
-      <h1 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">{title}</h1>
-      <h2 className="text-xl text-accent font-medium mb-6">Client: {client}</h2>
+      <h1 className="text-3xl md:text-4xl font-bold text-bone mb-4">{title}</h1>
+      <h2 className="text-xl text-brand font-medium mb-6">Client: {client}</h2>
       
       {image && (
         <div className="mb-8">
@@ -50,30 +50,30 @@ const CaseStudyView = ({
       
       <div className="prose max-w-none">
         <div className="mb-8">
-          <h3 className="text-2xl font-bold text-navy-800 mb-3">Summary</h3>
-          <p className="text-navy-600">{summary}</p>
+          <h3 className="text-2xl font-bold text-bone mb-3">Summary</h3>
+          <p className="text-fog">{summary}</p>
         </div>
         
         <div className="mb-8">
-          <h3 className="text-2xl font-bold text-navy-800 mb-3">Background</h3>
-          <p className="text-navy-600">{background}</p>
+          <h3 className="text-2xl font-bold text-bone mb-3">Background</h3>
+          <p className="text-fog">{background}</p>
         </div>
         
         <div className="mb-8">
-          <h3 className="text-2xl font-bold text-navy-800 mb-3">Objective</h3>
-          <p className="text-navy-600">{objective}</p>
+          <h3 className="text-2xl font-bold text-bone mb-3">Objective</h3>
+          <p className="text-fog">{objective}</p>
         </div>
         
         <div className="mb-8">
-          <h3 className="text-2xl font-bold text-navy-800 mb-3">Approach</h3>
+          <h3 className="text-2xl font-bold text-bone mb-3">Approach</h3>
           {approach.map((paragraph, index) => (
-            <p key={index} className="text-navy-600 mb-4">{paragraph}</p>
+            <p key={index} className="text-fog mb-4">{paragraph}</p>
           ))}
         </div>
         
         <div className="mb-8">
-          <h3 className="text-2xl font-bold text-navy-800 mb-3">Impact</h3>
-          <p className="text-navy-600">{impact}</p>
+          <h3 className="text-2xl font-bold text-bone mb-3">Impact</h3>
+          <p className="text-fog">{impact}</p>
         </div>
       </div>
     </div>

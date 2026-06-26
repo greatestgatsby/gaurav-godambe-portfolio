@@ -1,9 +1,11 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { motion } from "framer-motion";
 import Lenis from "lenis";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import AudioPlayer from "@/components/AudioPlayer";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 const Hero3D = lazy(() => import("@/components/Hero3D"));
 
@@ -17,41 +19,6 @@ const fadeUp = {
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
 };
 
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-ink/80 backdrop-blur-md border-b border-line" : "bg-transparent"
-      }`}
-    >
-      <nav className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
-        <a href="#top" className="font-display text-[0.95rem] font-semibold tracking-tight text-bone">
-          Gaurav&nbsp;Godambe
-        </a>
-        <div className="hidden items-center gap-8 text-sm text-fog md:flex">
-          <a href="#work" className="transition-colors hover:text-bone">Work</a>
-          <a href="#services" className="transition-colors hover:text-bone">Services</a>
-          <a href="#about" className="transition-colors hover:text-bone">About</a>
-          <Link to="/portfolio" className="transition-colors hover:text-bone">Portfolio</Link>
-          <Link to="/blog" className="transition-colors hover:text-bone">Blog</Link>
-        </div>
-        <Link
-          to={BOOKING_URL}
-          className="rounded-full bg-brand px-4 py-2 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
-        >
-          Book a call
-        </Link>
-      </nav>
-    </header>
-  );
-}
 
 function Hero() {
   return (
@@ -438,27 +405,6 @@ function CTA() {
   );
 }
 
-function LandingFooter() {
-  return (
-    <footer className="border-t border-line">
-      <div className="mx-auto flex max-w-content flex-col items-start justify-between gap-6 px-6 py-10 sm:flex-row sm:items-center">
-        <div>
-          <div className="font-display font-semibold tracking-tight text-bone">Gaurav Godambe</div>
-          <div className="mt-1 text-sm text-fog">Finance leadership + AI builds, end-to-end.</div>
-        </div>
-        <div className="flex gap-6 font-mono text-xs text-fog">
-          <Link to="/portfolio" className="hover:text-bone">Portfolio</Link>
-          <Link to="/blog" className="hover:text-bone">Blog</Link>
-          <Link to="/services" className="hover:text-bone">Services</Link>
-          <Link to="/contact" className="hover:text-bone">Contact</Link>
-        </div>
-      </div>
-      <div className="mx-auto max-w-content px-6 pb-8 font-mono text-[0.65rem] text-fog">
-        © {new Date().getFullYear()} Gaurav Godambe. All rights reserved.
-      </div>
-    </footer>
-  );
-}
 
 export default function NewLanding() {
   useEffect(() => {
@@ -483,7 +429,7 @@ export default function NewLanding() {
         <meta name="description" content="Gaurav Godambe - Finance leadership and AI builds, end-to-end. AI agents, AI consulting, AI strategy, financial analysis, budgeting, and forecasting." />
         <meta name="keywords" content="Gaurav, AI agent, AI consultant, AI strategy, financial analysis, budgeting, forecasting" />
       </Helmet>
-      <Nav />
+      <SiteNav />
       <main>
         <Hero />
         <Edge />
@@ -494,7 +440,7 @@ export default function NewLanding() {
         <CTA />
 
       </main>
-      <LandingFooter />
+      <SiteFooter />
       <AudioPlayer />
     </div>
   );

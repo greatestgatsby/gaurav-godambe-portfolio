@@ -24,19 +24,19 @@ const ServiceCard = ({
   const getIcon = () => {
     switch (icon) {
       case 'chart-bar':
-        return <BarChart3 className="h-10 w-10 text-accent" />;
+        return <BarChart3 className="h-10 w-10 text-brand" />;
       case 'robot':
-        return <Bot className="h-10 w-10 text-accent" />;
+        return <Bot className="h-10 w-10 text-brand" />;
       case 'clipboard-list':
-        return <ClipboardList className="h-10 w-10 text-accent" />;
+        return <ClipboardList className="h-10 w-10 text-brand" />;
       case 'chart-line':
-        return <LineChart className="h-10 w-10 text-accent" />;
+        return <LineChart className="h-10 w-10 text-brand" />;
       case 'presentation-chart-bar':
-        return <Presentation className="h-10 w-10 text-accent" />;
+        return <Presentation className="h-10 w-10 text-brand" />;
       case 'brain':
-        return <Brain className="h-10 w-10 text-accent" />;
+        return <Brain className="h-10 w-10 text-brand" />;
       default:
-        return <BarChart3 className="h-10 w-10 text-accent" />;
+        return <BarChart3 className="h-10 w-10 text-brand" />;
     }
   };
 
@@ -58,20 +58,20 @@ const ServiceCard = ({
             </span>
           )}
           {isAIService && !status && (
-            <span className="inline-flex items-center rounded-full bg-accent/20 px-2.5 py-0.5 text-xs font-medium text-accent-dark">
+            <span className="inline-flex items-center rounded-full bg-brand/15 px-2.5 py-0.5 text-xs font-medium text-brand">
               AI-Powered
             </span>
           )}
         </div>
-        <h3 className={cn("text-xl font-bold text-navy-900 mb-3", isAIService && "text-accent-dark")}>
+        <h3 className={cn("text-xl font-bold text-bone mb-3", isAIService && "text-brand")}>
           {title}
         </h3>
-        <p className="text-navy-600 mb-6">{description}</p>
+        <p className="text-fog mb-6">{description}</p>
         <div className="space-y-2">
           {highlights.map((highlight, index) => (
             <div key={index} className="flex items-start">
-              <CheckCircle className={cn("mr-2 h-5 w-5 flex-shrink-0 mt-0.5", isAIService ? "text-accent-dark" : "text-accent")} />
-              <span className="text-navy-700">{highlight}</span>
+              <CheckCircle className={cn("mr-2 h-5 w-5 flex-shrink-0 mt-0.5", isAIService ? "text-brand" : "text-brand")} />
+              <span className="text-bone/90">{highlight}</span>
             </div>
           ))}
         </div>
