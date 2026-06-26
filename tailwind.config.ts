@@ -97,6 +97,8 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				heading: ['Poppins', 'sans-serif'],
+				display: ['"Inter Tight"', 'Inter', 'system-ui', 'sans-serif'],
+				mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
