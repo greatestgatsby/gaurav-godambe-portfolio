@@ -1,6 +1,6 @@
 import { Suspense, useMemo, useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
+
 import * as THREE from "three";
 
 function ForecastSurface({ pointer }: { pointer: React.MutableRefObject<{ x: number; y: number }> }) {
@@ -54,15 +54,7 @@ function ForecastSurface({ pointer }: { pointer: React.MutableRefObject<{ x: num
 }
 
 function Scene({ pointer }: { pointer: React.MutableRefObject<{ x: number; y: number }> }) {
-  return (
-    <>
-      <ForecastSurface pointer={pointer} />
-      <EffectComposer>
-        <Bloom intensity={0.9} luminanceThreshold={0.1} luminanceSmoothing={0.4} mipmapBlur />
-        <Vignette eskil={false} offset={0.25} darkness={0.95} />
-      </EffectComposer>
-    </>
-  );
+  return <ForecastSurface pointer={pointer} />;
 }
 
 export default function Hero3D() {
