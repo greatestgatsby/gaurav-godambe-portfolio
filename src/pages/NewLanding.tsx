@@ -19,41 +19,6 @@ const fadeUp = {
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
 };
 
-function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-ink/80 backdrop-blur-md border-b border-line" : "bg-transparent"
-      }`}
-    >
-      <nav className="mx-auto flex max-w-content items-center justify-between px-6 py-4">
-        <a href="#top" className="font-display text-[0.95rem] font-semibold tracking-tight text-bone">
-          Gaurav&nbsp;Godambe
-        </a>
-        <div className="hidden items-center gap-8 text-sm text-fog md:flex">
-          <a href="#work" className="transition-colors hover:text-bone">Work</a>
-          <a href="#services" className="transition-colors hover:text-bone">Services</a>
-          <a href="#about" className="transition-colors hover:text-bone">About</a>
-          <Link to="/portfolio" className="transition-colors hover:text-bone">Portfolio</Link>
-          <Link to="/blog" className="transition-colors hover:text-bone">Blog</Link>
-        </div>
-        <Link
-          to={BOOKING_URL}
-          className="rounded-full bg-brand px-4 py-2 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
-        >
-          Book a call
-        </Link>
-      </nav>
-    </header>
-  );
-}
 
 function Hero() {
   return (
