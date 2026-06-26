@@ -107,9 +107,9 @@ function Hero() {
           className="mt-12 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-fog"
         >
           <span>15+ yrs finance &amp; strategy</span>
-          <span className="text-line">/</span>
+          <span className="text-fog/50">/</span>
           <span>End-to-end AI builds</span>
-          <span className="text-line">/</span>
+          <span className="text-fog/50">/</span>
           <span>40%+ manual-work reduction</span>
         </motion.div>
       </div>
@@ -453,7 +453,7 @@ function LandingFooter() {
           <Link to="/contact" className="hover:text-bone">Contact</Link>
         </div>
       </div>
-      <div className="mx-auto max-w-content px-6 pb-8 font-mono text-[0.65rem] text-line">
+      <div className="mx-auto max-w-content px-6 pb-8 font-mono text-[0.65rem] text-fog">
         © {new Date().getFullYear()} Gaurav Godambe. All rights reserved.
       </div>
     </footer>
