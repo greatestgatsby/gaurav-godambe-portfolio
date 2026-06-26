@@ -92,14 +92,14 @@ const PortfolioCard = ({
         </div>
       </div>
       <CardContent className="pt-6">
-        <h3 className="text-xl font-bold text-navy-900 mb-2">{title}</h3>
-        <p className="text-navy-600 mb-4">{summary}</p>
-        <div className="text-sm font-medium text-navy-500 mb-2">
-          <span className="font-semibold text-navy-700">Tech: </span>
+        <h3 className="text-xl font-bold text-bone mb-2">{title}</h3>
+        <p className="text-fog mb-4">{summary}</p>
+        <div className="text-sm font-medium text-fog mb-2">
+          <span className="font-semibold text-bone/90">Tech: </span>
           {tech}
         </div>
-        <div className="mt-4 pt-4 border-t border-navy-100">
-          <div className="text-sm font-medium text-navy-700">
+        <div className="mt-4 pt-4 border-t border-line">
+          <div className="text-sm font-medium text-bone/90">
             <span className="font-semibold">Impact: </span>
             {impact}
           </div>

@@ -19,10 +19,10 @@ const BlogSection = ({ className, fullPage = false }: BlogSectionProps) => {
     <section className={cn('py-16 md:py-24', className)}>
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className={cn(fullPage ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl", "font-bold text-navy-900 mb-6")}>
+          <h2 className={cn(fullPage ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl", "font-bold text-bone mb-6")}>
             {fullPage ? 'Blog & Insights' : 'Latest Insights'}
           </h2>
-          <p className="text-xl text-navy-600 max-w-3xl mx-auto">
+          <p className="text-xl text-fog max-w-3xl mx-auto">
             {fullPage 
               ? 'Thoughts, ideas, and insights on finance transformation, technology, and strategic business planning.'
               : 'Coming soon: Articles on finance transformation, AI in FP&A, and strategic reporting.'}
@@ -45,18 +45,18 @@ const BlogSection = ({ className, fullPage = false }: BlogSectionProps) => {
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     />
                     <div className="absolute top-3 right-3">
-                      <span className="px-3 py-1 bg-navy-900/80 text-white text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-bone/80 text-white text-xs font-medium rounded-full">
                         {post.category}
                       </span>
                     </div>
                   </div>
                   <CardContent className="pt-6">
-                    <div className="text-sm text-navy-500 mb-2">{post.date}</div>
-                    <h3 className="text-xl font-bold text-navy-900 mb-2 line-clamp-2">{post.title}</h3>
-                    <p className="text-navy-600 line-clamp-3">{post.excerpt}</p>
+                    <div className="text-sm text-fog mb-2">{post.date}</div>
+                    <h3 className="text-xl font-bold text-bone mb-2 line-clamp-2">{post.title}</h3>
+                    <p className="text-fog line-clamp-3">{post.excerpt}</p>
                     
-                    <div className="mt-4 pt-4 border-t border-navy-100">
-                      <span className="text-accent hover:text-accent-dark transition-colors font-medium">
+                    <div className="mt-4 pt-4 border-t border-line">
+                      <span className="text-brand hover:text-brand transition-colors font-medium">
                         Read More
                       </span>
                     </div>

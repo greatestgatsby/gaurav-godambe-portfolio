@@ -160,10 +160,10 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
     <section className={cn('py-16 md:py-24', className)}>
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className={cn(fullPage ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl", "font-bold text-navy-900 mb-6")}>
+          <h2 className={cn(fullPage ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl", "font-bold text-bone mb-6")}>
             {fullPage ? 'My Portfolio' : 'My Work'}
           </h2>
-          <p className="text-xl text-navy-600 max-w-3xl mx-auto">
+          <p className="text-xl text-fog max-w-3xl mx-auto">
             A selection of my most impactful projects and initiatives that have driven measurable business results.
           </p>
           
@@ -176,8 +176,8 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
                   className={cn(
                     'px-4 py-2 rounded-full transition-all',
                     activeCategory === category
-                      ? 'bg-accent text-white'
-                      : 'bg-navy-100 text-navy-700 hover:bg-navy-200'
+                      ? 'bg-brand text-white'
+                      : 'bg-surface text-bone/90 hover:bg-surface'
                   )}
                 >
                   {category}

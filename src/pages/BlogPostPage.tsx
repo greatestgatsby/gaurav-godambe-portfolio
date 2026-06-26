@@ -1,7 +1,6 @@
-
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import SiteNav from '@/components/SiteNav';
+import SiteFooter from '@/components/SiteFooter';
 import BlogPost from '@/components/BlogPost';
 import { useParams, Navigate } from 'react-router-dom';
 import { blogPosts } from '@/data/blogPosts';
@@ -10,39 +9,36 @@ import { Helmet } from 'react-helmet';
 const BlogPostPage = () => {
   const { id } = useParams<{ id: string }>();
   const postId = Number(id);
-  
-  // Find the blog post with the matching ID
+
   const post = blogPosts.find(post => post.id === postId);
-  
-  // If no post is found, redirect to blog page
+
   if (!post) {
     return <Navigate to="/blog" />;
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-ink text-bone">
       <Helmet>
         <title>{post.title} | Gaurav Godambe</title>
         <meta name="description" content={post.excerpt} />
         <link rel="canonical" href={`https://your-domain.com/blog/${post.id}`} />
       </Helmet>
-      <Navbar />
+      <SiteNav />
       <main className="flex-grow pt-20">
-        <div className="bg-gradient-to-b from-accent/10 to-transparent py-10">
-          <div className="container text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4">
+        <section className="border-b border-line bg-surface/40">
+          <div className="mx-auto max-w-content px-6 py-16 md:py-20 text-center">
+            <p className="eyebrow mb-4">{post.category}</p>
+            <h1 className="font-display text-3xl md:text-5xl font-semibold tracking-tight text-bone mb-4">
               {post.title}
             </h1>
-            <p className="text-lg text-navy-600">
-              {post.date} • {post.category}
-            </p>
+            <p className="font-mono text-xs text-fog">{post.date}</p>
           </div>
-        </div>
+        </section>
         <section className="py-12">
           <BlogPost post={post} />
         </section>
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
   );
 };

@@ -71,8 +71,8 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
       <div className="container">
         {fullPage && (
           <div className="mb-16 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">About Me</h1>
-            <p className="text-xl text-navy-600 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold text-bone mb-6">About Me</h1>
+            <p className="text-xl text-fog max-w-3xl mx-auto">
               A finance transformation leader with a passion for technology and innovation
             </p>
           </div>
@@ -80,16 +80,16 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h2 className={cn(fullPage ? "text-3xl" : "text-3xl md:text-4xl", "font-bold text-navy-900 mb-6")}>
+            <h2 className={cn(fullPage ? "text-3xl" : "text-3xl md:text-4xl", "font-bold text-bone mb-6")}>
               {!fullPage && "About Me"}
             </h2>
             <div className="prose prose-lg max-w-none">
-              <p className="text-navy-700 mb-6">
+              <p className="text-bone/90 mb-6">
                 Hi, I'm Gaurav Godambe, a finance transformation leader and program manager with 
                 over 15 years of experience spanning business finance, FP&A, performance reporting, 
                 and technology-led change.
               </p>
-              <p className="text-navy-700 mb-6">
+              <p className="text-bone/90 mb-6">
                 From optimizing financial processes to driving multi-million-dollar savings with AI 
                 and BI tools, I thrive at the intersection of strategy, finance, and innovation. 
                 I bring deep experience across global organizations like MSCI, Siemens, and Deutsche Bank—leading 
@@ -97,13 +97,13 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
               </p>
               {fullPage && (
                 <>
-                  <p className="text-navy-700 mb-6">
+                  <p className="text-bone/90 mb-6">
                     My approach combines deep financial expertise with a tech-forward mindset,
                     enabling me to bridge the gap between finance functions and technological innovation.
                     I specialize in identifying inefficiencies and implementing data-driven solutions
                     that drive measurable business outcomes.
                   </p>
-                  <p className="text-navy-700">
+                  <p className="text-bone/90">
                     Throughout my career, I've built a reputation for delivering complex transformation
                     initiatives on time and under budget, while ensuring stakeholder alignment and
                     sustainable process improvements.
@@ -116,11 +116,11 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
             <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <Card className="h-full">
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-semibold text-navy-900 mb-4">Strategic Finance</h3>
+                  <h3 className="text-lg font-semibold text-bone mb-4">Strategic Finance</h3>
                   <ul className="space-y-2">
                     {skills.strategic.map((skill) => (
                       <li key={skill} className="flex items-start">
-                        <Check className="mr-2 h-5 w-5 text-accent" />
+                        <Check className="mr-2 h-5 w-5 text-brand" />
                         <span>{skill}</span>
                       </li>
                     ))}
@@ -131,11 +131,11 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
             <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <Card className="h-full">
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-semibold text-navy-900 mb-4">Program Management</h3>
+                  <h3 className="text-lg font-semibold text-bone mb-4">Program Management</h3>
                   <ul className="space-y-2">
                     {skills.program.map((skill) => (
                       <li key={skill} className="flex items-start">
-                        <Check className="mr-2 h-5 w-5 text-accent" />
+                        <Check className="mr-2 h-5 w-5 text-brand" />
                         <span>{skill}</span>
                       </li>
                     ))}
@@ -146,11 +146,11 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
             <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <Card className="h-full">
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-semibold text-navy-900 mb-4">Technology</h3>
+                  <h3 className="text-lg font-semibold text-bone mb-4">Technology</h3>
                   <ul className="space-y-2">
                     {skills.technology.map((skill) => (
                       <li key={skill} className="flex items-start">
-                        <Check className="mr-2 h-5 w-5 text-accent" />
+                        <Check className="mr-2 h-5 w-5 text-brand" />
                         <span>{skill}</span>
                       </li>
                     ))}
@@ -161,11 +161,11 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
             <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
               <Card className="h-full">
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-semibold text-navy-900 mb-4">AI & Automation</h3>
+                  <h3 className="text-lg font-semibold text-bone mb-4">AI & Automation</h3>
                   <ul className="space-y-2">
                     {skills.ai.map((skill) => (
                       <li key={skill} className="flex items-start">
-                        <Check className="mr-2 h-5 w-5 text-accent" />
+                        <Check className="mr-2 h-5 w-5 text-brand" />
                         <span>{skill}</span>
                       </li>
                     ))}
@@ -178,31 +178,31 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
 
         {fullPage && (
           <div className="mt-16">
-            <h2 className="text-3xl font-bold text-navy-900 mb-8 text-center">Career Highlights</h2>
+            <h2 className="text-3xl font-bold text-bone mb-8 text-center">Career Highlights</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Card className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <CardContent className="pt-6">
-                  <div className="font-bold text-4xl text-accent mb-2">15+</div>
-                  <h3 className="text-lg font-semibold text-navy-900 mb-2">Years Experience</h3>
-                  <p className="text-navy-600">
+                  <div className="font-bold text-4xl text-brand mb-2">15+</div>
+                  <h3 className="text-lg font-semibold text-bone mb-2">Years Experience</h3>
+                  <p className="text-fog">
                     Across global financial institutions and technology companies
                   </p>
                 </CardContent>
               </Card>
               <Card className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <CardContent className="pt-6">
-                  <div className="font-bold text-4xl text-accent mb-2">$3M+</div>
-                  <h3 className="text-lg font-semibold text-navy-900 mb-2">Cost Savings</h3>
-                  <p className="text-navy-600">
+                  <div className="font-bold text-4xl text-brand mb-2">$3M+</div>
+                  <h3 className="text-lg font-semibold text-bone mb-2">Cost Savings</h3>
+                  <p className="text-fog">
                     Delivered through process optimization and automation
                   </p>
                 </CardContent>
               </Card>
               <Card className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <CardContent className="pt-6">
-                  <div className="font-bold text-4xl text-accent mb-2">50%</div>
-                  <h3 className="text-lg font-semibold text-navy-900 mb-2">Efficiency Gain</h3>
-                  <p className="text-navy-600">
+                  <div className="font-bold text-4xl text-brand mb-2">50%</div>
+                  <h3 className="text-lg font-semibold text-bone mb-2">Efficiency Gain</h3>
+                  <p className="text-fog">
                     Average improvement in reporting cycles through BI implementation
                   </p>
                 </CardContent>
@@ -212,7 +212,7 @@ I wholeheartedly endorse Gaurav for any leadership role that requires a strategi
         )}
 
         <div className="mt-16">
-          <h2 className="text-3xl font-bold text-navy-900 mb-8 text-center">Testimonials</h2>
+          <h2 className="text-3xl font-bold text-bone mb-8 text-center">Testimonials</h2>
           <div className="max-w-3xl mx-auto grid grid-cols-1 gap-8">
             {testimonials.map((t, idx) => (
               <TestimonialCard
