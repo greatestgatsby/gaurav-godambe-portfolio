@@ -137,7 +137,7 @@ const ServicesSection = ({ className, fullPage = false }: ServicesSectionProps) 
 
         {fullPage && (
           <div className="mt-20 text-center">
-            <div className="bg-white rounded-xl p-8 md:p-12 shadow-lg max-w-4xl mx-auto">
+            <div className="bg-surface/60 border border-line rounded-xl p-8 md:p-12 max-w-4xl mx-auto">
               <h3 className="text-2xl md:text-3xl font-bold text-bone mb-6">Ready to Work Together?</h3>
               <p className="text-lg text-fog mb-8">
                 Have a specific project in mind or need customized <span className="text-brand font-medium">AI solutions</span>? Let's discuss how I can help
