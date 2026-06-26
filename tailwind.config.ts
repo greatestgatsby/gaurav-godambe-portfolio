@@ -83,13 +83,13 @@ export default {
 					light: '#93c5fd',
 					dark: '#2563eb',
 				},
-				// New landing palette
-				ink: '#0A0B0D',
-				surface: '#111316',
-				line: '#1E2227',
-				fog: '#9AA0A6',
-				bone: '#E8E9EB',
-				brand: '#14B8A6',
+				// Landing palette (light, SMB-friendly; brand teal preserved for 3D mesh continuity)
+				ink: '#FAFAF7',      // page / card surface (warm off-white)
+				surface: '#F2F1EC',  // alt band (subtle warm tint)
+				line: '#E3E2DC',     // borders / dividers
+				fog: '#5C6470',      // muted text (slate)
+				bone: '#0F172A',     // primary text (deep navy)
+				brand: '#0D9488',    // teal accent (deeper for contrast on light bg)
 			},
 			maxWidth: {
 				content: '1100px',

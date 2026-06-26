@@ -81,7 +81,7 @@ export default function Hero3D() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 90% at 50% 120%, rgba(20,184,166,0.22) 0%, rgba(20,184,166,0.05) 40%, rgba(10,11,13,0) 70%), #0A0B0D",
+            "radial-gradient(120% 90% at 50% 120%, rgba(13,148,136,0.22) 0%, rgba(13,148,136,0.06) 40%, rgba(250,250,247,0) 70%), #FAFAF7",
         }}
       />
     );
