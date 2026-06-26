@@ -490,7 +490,9 @@ export default function NewLanding() {
         <Work />
         <Services />
         <About />
+        <Testimonials />
         <CTA />
+
       </main>
       <LandingFooter />
       <AudioPlayer />
