@@ -83,6 +83,16 @@ export default {
 					light: '#93c5fd',
 					dark: '#2563eb',
 				},
+				// New landing palette
+				ink: '#0A0B0D',
+				surface: '#111316',
+				line: '#1E2227',
+				fog: '#9AA0A6',
+				bone: '#E8E9EB',
+				brand: '#14B8A6',
+			},
+			maxWidth: {
+				content: '1100px',
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
