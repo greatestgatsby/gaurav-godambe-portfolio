@@ -1,9 +1,11 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { motion } from "framer-motion";
 import Lenis from "lenis";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import AudioPlayer from "@/components/AudioPlayer";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 
 const Hero3D = lazy(() => import("@/components/Hero3D"));
 
