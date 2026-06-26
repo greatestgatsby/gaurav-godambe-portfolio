@@ -429,7 +429,7 @@ export default function NewLanding() {
         <meta name="description" content="Gaurav Godambe - Finance leadership and AI builds, end-to-end. AI agents, AI consulting, AI strategy, financial analysis, budgeting, and forecasting." />
         <meta name="keywords" content="Gaurav, AI agent, AI consultant, AI strategy, financial analysis, budgeting, forecasting" />
       </Helmet>
-      <Nav />
+      <SiteNav />
       <main>
         <Hero />
         <Edge />
@@ -440,7 +440,7 @@ export default function NewLanding() {
         <CTA />
 
       </main>
-      <LandingFooter />
+      <SiteFooter />
       <AudioPlayer />
     </div>
   );
