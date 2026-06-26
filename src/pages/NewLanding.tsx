@@ -336,7 +336,72 @@ function About() {
   );
 }
 
+const testimonials = [
+  {
+    quote: `I have the pleasure of working closely with Gaurav during his tenure as the regional CFO at MSCI, where he demonstrated exceptional leadership and financial expertise. Gaurav's innovative approach to budget planning played a pivotal role in driving financial success across different product lines in the Asia Pacific region. His strong business acumen is evident in every aspect of his work, and he consistently delivers insightful and impactful dashboards that provide valuable sales insights and performance trends.`,
+    author: "Jason Chan, CFA",
+    position: "Fund and Corporate Service Solutions",
+    company: "MSCI",
+    avatarUrl: "/lovable-uploads/b4de7b70-5781-4c7b-adf9-dfbca5d9752e.png",
+  },
+  {
+    quote: `I highly recommend my colleague Gaurav for his exceptional ability to identify insightful trends and address gaps through his expertise in creating effective dashboards. His analytical skills and strategic mindset significantly contribute to our team's success. A valuable asset for any multinational organisation.`,
+    author: "Vivek Agarwalla, CFA",
+    position: "Executive Director - Portfolio & Risk Management Analytics",
+    company: "MSCI",
+    avatarUrl: "/lovable-uploads/f61926d8-11b7-4f1e-a8d4-233df1e41e03.png",
+  },
+  {
+    quote: `Highly professional and efficient. One of those who get things done.`,
+    author: "Sean Kim",
+    position: "APAC Lead of Index Structured Products",
+    company: "MSCI",
+    avatarUrl: "/lovable-uploads/cbf06246-48b1-48e2-a308-54922c95f8a4.png",
+  },
+];
+
+function Testimonials() {
+  return (
+    <section className="border-y border-line bg-surface/40">
+      <div className="mx-auto max-w-content px-6 py-20 md:py-28">
+        <motion.p {...fadeUp} className="eyebrow mb-4">Testimonials</motion.p>
+        <motion.h2
+          {...fadeUp}
+          className="mb-14 max-w-2xl font-display text-2xl font-semibold tracking-tight text-bone md:text-3xl"
+        >
+          What colleagues say.
+        </motion.h2>
+        <div className="grid gap-5 md:grid-cols-3">
+          {testimonials.map((t, i) => (
+            <motion.figure
+              key={t.author}
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: i * 0.08 }}
+              className="flex flex-col rounded-xl border border-line bg-ink p-7"
+            >
+              <blockquote className="text-sm leading-relaxed text-fog">"{t.quote}"</blockquote>
+              <figcaption className="mt-6 flex items-center gap-3 pt-6 border-t border-line">
+                <img
+                  src={t.avatarUrl}
+                  alt={t.author}
+                  loading="lazy"
+                  className="h-10 w-10 rounded-full object-cover border border-line"
+                />
+                <div>
+                  <div className="text-sm font-medium text-bone">{t.author}</div>
+                  <div className="font-mono text-[0.65rem] text-fog">{t.position} · {t.company}</div>
+                </div>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CTA() {
+
   return (
     <section className="border-t border-line">
       <div className="mx-auto max-w-content px-6 py-24 text-center md:py-32">
