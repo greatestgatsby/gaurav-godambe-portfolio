@@ -1,41 +1,92 @@
+# Unify Site Look & Feel
+
+**Problem:** Home (`NewLanding`) uses the new light/teal palette (tokens: `ink`, `surface`, `line`, `fog`, `bone`, `brand`), `Inter Tight` display font, JetBrains Mono eyebrows, its own slim `Nav`/`LandingFooter`, and consistent section rhythm. All inner pages (`/portfolio`, `/services`, `/about`, `/contact`, `/blog`, `/blog/:id`, `/resume`) use the OLD `Navbar` + `Footer`, old `navy-*` / `accent-*` colors, `Poppins` headings, blue gradient page headers, and shadcn cards styled for the old palette. Jumping between them feels like two different sites.
+
 ## Goal
-Keep the teal 3D wireframe hero (Hero3D) as the visual centerpiece, but revert the rest of the site back to the earlier light, SMB-friendly palette and styling.
 
-## Approach
+Every page shares the home page's typography, colors, navigation, footer, section structure, and card style.
 
-### 1. Restore light theme tokens
-- Revert `src/index.css` `:root` tokens to the earlier light palette (warm off-white background, dark foreground, the original primary/accent colors used before the dark refresh).
-- Remove the dark-mode-as-default overrides that came in with the GauravGodambe repo import.
-- Keep one teal accent token (matching the Hero3D mesh color) so the hero feels intentional rather than disconnected from the rest of the page.
+## Plan
 
-### 2. Hero section — hybrid treatment
-- Keep `Hero3D.tsx` (3D wireframe + Three.js) exactly as is for the canvas.
-- Place it inside a hero container that uses the light theme: light background fading into the 3D canvas, dark text on light surfaces below.
-- Make sure the hero's headline, sub-copy, and CTAs read on the light palette (no more white-on-black).
+### 1. Shared chrome (used by every non-home page)
 
-### 3. Revert all other sections to light styling
-On `src/pages/NewLanding.tsx` (the current landing) bring back the earlier look for:
-- About (with LinkedIn photo)
-- Services grid + GMB Category Finder card
-- Portfolio (incl. Client Coverage case study + AI-Driven RFP)
-- Testimonials (Jason Chan, Vivek Agarwalla, Sean Kim) — light cards with subtle shadow
-- Contact (both emails)
-- Footer
-- Navbar — light background, dark text, teal hover/active accent
+Create two new components extracted from `NewLanding`:
 
-No content changes — only background, surface, text, border, and accent classes swap from dark tokens to light tokens.
+- `src/components/SiteNav.tsx` — same markup as `NewLanding`'s `Nav`, but using `react-router` `Link` for every item (`/`, `/portfolio`, `/services`, `/about`, `/blog`, `/contact`) and highlighting the active route. "Book a call" pill links to `/contact`.
+- `src/components/SiteFooter.tsx` — same markup as `NewLanding`'s `LandingFooter`, with the same links/email + LinkedIn.
 
-### 4. Preserve everything else
-- Routes: `/`, `/blog`, `/blog/:id`, `/portfolio/case-study/:caseStudyId`
-- AudioPlayer (intro music), Google Analytics (G-MYS751LLBH), favicon (GG)
-- Blog page + n8n "Stay Connected" link
-- SEO meta/keywords already in `index.html` and pages
+Update `NewLanding.tsx` to import and use these (replacing its local `Nav`/`LandingFooter`) so home and inner pages stay byte-identical.
 
-### 5. Verify
-- Visual check of `/` (hero teal + light rest), `/blog`, and a case study page via Playwright screenshots at desktop + mobile widths.
-- Console clean, no theme-token regressions.
+Delete usages of the old `Navbar` and `Footer` from every page. (Keep the files for now to avoid churn; remove imports.)
 
-## Technical notes
-- Tailwind tokens stay semantic (`bg-background`, `text-foreground`, `border-border`, `bg-card`, `text-primary`) — only the HSL values in `index.css` change.
-- `Hero3D.tsx` itself is untouched; only its wrapping section's surrounding layout/colors adapt.
-- No new dependencies. No backend changes.
+### 2. Page shell pattern
+
+Each inner page wraps content in:
+
+```tsx
+<div className="min-h-screen bg-ink text-bone">
+  <Helmet>...</Helmet>
+  <SiteNav />
+  <main className="pt-24">
+    <PageHeader eyebrow="…" title="…" subtitle="…" />
+    {/* page sections */}
+  </main>
+  <SiteFooter />
+</div>
+```
+
+Create `src/components/PageHeader.tsx`: eyebrow (mono teal), `font-display` H1 in `text-bone`, `text-fog` subtitle, `max-w-content` container, generous top/bottom padding, subtle bottom `border-line`. Replaces the current blue gradient banners.
+
+### 3. Restyle inner page content (presentation only, no logic changes)
+
+For each component below, swap old color/typography classes to the landing tokens. No behavior, data, or routing changes.
+
+Class-mapping rules applied everywhere:
+- `bg-white` / page bg → `bg-ink`
+- `text-navy-900` / `text-navy-800` → `text-bone`, `font-display`
+- `text-navy-600` / `text-navy-500` → `text-fog`
+- `text-accent` / `text-accent-dark` → `text-brand`
+- `bg-accent` → `bg-brand text-ink`
+- shadcn `Card` borders → `border border-line bg-surface/50 rounded-xl`
+- Headings → `font-display font-semibold tracking-tight`
+- Eyebrow labels (small caps section labels) → `eyebrow` class
+- Buttons → match landing pill style (`rounded-full bg-brand text-ink` primary, `border border-line text-bone` secondary)
+- Badges → muted `border border-line bg-surface text-fog font-mono text-[0.65rem] uppercase`
+
+Files to restyle:
+- `src/components/PortfolioSection.tsx` + `src/components/PortfolioCard.tsx` (category badge colors → unified muted/brand variants)
+- `src/components/ServicesSection.tsx` + `src/components/ServiceCard.tsx`
+- `src/components/BusinessCategoryCard.tsx` (form on ink surface, brand button)
+- `src/components/AboutSection.tsx`
+- `src/components/ContactSection.tsx`
+- `src/components/BlogSection.tsx` + `src/components/BlogPost.tsx` + `src/pages/Blog.tsx` (cards on `bg-surface`, prose styling on light ink bg)
+- `src/components/CaseStudyView.tsx`
+- `src/pages/Resume.tsx`
+- `src/components/TestimonialCard.tsx` (if still used outside landing)
+
+### 4. Page wrappers updated to new shell
+
+- `src/pages/About.tsx`
+- `src/pages/Portfolio.tsx`
+- `src/pages/Services.tsx`
+- `src/pages/Contact.tsx`
+- `src/pages/Blog.tsx`
+- `src/pages/BlogPostPage.tsx`
+- `src/pages/Resume.tsx`
+- `src/pages/NotFound.tsx`
+
+Each gets: `bg-ink text-bone` root, `<SiteNav />`, `<PageHeader />`, restyled `<main>`, `<SiteFooter />`. Helmet metadata preserved as-is.
+
+### 5. Global font/baseline
+
+In `src/index.css`, set body default to `bg-ink text-bone font-sans`, and make `h1–h6` default to `font-display`. This guarantees pages without explicit classes still inherit the landing look.
+
+## Out of scope
+
+- No 3D mesh on inner pages (mesh stays exclusive to the home hero, per prior decision).
+- No content, copy, route, GA, AudioPlayer, or SEO changes.
+- Old `Navbar.tsx` / `Footer.tsx` files remain on disk but unused; can be deleted in a follow-up.
+
+## Verification
+
+After build, spot-check `/`, `/portfolio`, `/services`, `/about`, `/contact`, `/blog`, `/blog/2`, `/resume` via Playwright screenshots to confirm consistent nav, typography, colors, and section rhythm.
