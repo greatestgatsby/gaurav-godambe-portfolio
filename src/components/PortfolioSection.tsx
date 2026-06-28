@@ -3,6 +3,9 @@ import { cn } from '@/lib/utils';
 import PortfolioCard from './PortfolioCard';
 import Button from '@/components/ui/CustomButton';
 import CaseStudyView from './CaseStudyView';
+import SelectedEngagement from './SelectedEngagement';
+import EngagementRow from './EngagementRow';
+import { featuredEngagements, additionalEngagements } from '@/data/engagements';
 
 interface PortfolioSectionProps {
   className?: string;
@@ -11,11 +14,7 @@ interface PortfolioSectionProps {
 }
 
 const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: PortfolioSectionProps) => {
-  // Define project categories
-  const categories = ['All', 'Strategy', 'Sales', 'Product', 'AI', 'Automation', 'Healthcare', 'Finance'];
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  // Sample portfolio projects
+  // Homepage preview projects (compact cards on /)
   const projects = [
     {
       id: 9,
@@ -50,73 +49,10 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
       previewUrl: 'https://preview-e549300c--premium-pack-mumbai.lovable.app/',
       trending: true,
     },
-    {
-      id: 8,
-      title: 'Healthcare Record Management System',
-      summary: 'Built a modern web app for a small clinic to manage patient records with an intuitive interface and secure data handling.',
-      impact: 'Reduced record retrieval time by 65% and improved staff productivity by 40%.',
-      category: 'Healthcare',
-      image: 'https://images.unsplash.com/photo-1587370560942-ad2a04eabb6d',
-      tech: 'React, TypeScript, Tailwind CSS, Supabase',
-      previewUrl: 'https://preview--clinic-record-central.lovable.app/',
-    },
-    {
-      id: 2,
-      title: 'AI-Driven RFP & Forecasting Tool',
-      summary: 'Intelligent system for responding to RFPs and improving sales forecasting accuracy.',
-      impact: 'Improved sales forecasting accuracy by 10%, reduced client onboarding time.',
-      category: 'AI',
-      image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
-      tech: 'AI, GPT-4, Power Automate',
-    },
-    {
-      id: 3,
-      title: 'Operational Efficiency via KPI Dashboards',
-      summary: 'Comprehensive KPI dashboards providing real-time operational insights.',
-      impact: 'Reduced commentary and reporting prep time by 50%.',
-      category: 'Product',
-      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692',
-      tech: 'Power BI + Copilot',
-    },
-    {
-      id: 4,
-      title: 'Investment Expense Tracker Revamp',
-      summary: 'Modernized expense tracking system for investment operations.',
-      impact: '50% time reduction in monthly reporting cycles.',
-      category: 'Automation',
-      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984',
-      tech: 'Excel VBA, Workflow Automation',
-    },
-    {
-      id: 5,
-      title: 'Finance Transformation Strategy',
-      summary: 'End-to-end finance transformation roadmap and implementation plan.',
-      impact: 'Delivered $1.2M in annual savings through process optimization.',
-      category: 'Strategy',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40',
-      tech: 'Strategic Planning, Change Management',
-    },
-    {
-      id: 6,
-      title: 'Sales Performance Analytics',
-      summary: 'Advanced analytics platform for tracking and optimizing sales performance.',
-      impact: 'Increased sales team productivity by 15% through data-driven insights.',
-      category: 'Sales',
-      image: 'https://images.unsplash.com/photo-1560472355-536de3962603',
-      tech: 'Power BI, SQL, Data Modeling',
-    },
   ];
 
-  // Filter projects based on active category
-  const filteredProjects = activeCategory === 'All'
-    ? projects
-    : projects.filter(project => project.category === activeCategory);
-
-  // Display all projects for full page, but limited set for homepage
-  const displayedProjects = fullPage ? filteredProjects : filteredProjects.slice(0, 3);
-
-  // Case study data
-  const caseStudies = {
+  // Case study data (preserved for /portfolio/case-study/:id)
+  const caseStudies: Record<string, any> = {
     msci: {
       title: "Building a Client Profitability Framework for MSCI's Analytics Business",
       client: "MSCI",
@@ -156,41 +92,54 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
     return <CaseStudyView {...caseStudies[showCaseStudy]} />;
   }
 
+  if (fullPage) {
+    return (
+      <section className={cn('pb-24', className)}>
+        <div className="mx-auto max-w-content px-6 py-12 md:py-16">
+          <p className="max-w-3xl text-base leading-relaxed text-fog md:text-lg">
+            Over the past few years I've worked at the intersection of finance,
+            strategy, automation and AI. Below are examples of projects where
+            technology created tangible business value.
+          </p>
+        </div>
+
+        <div>
+          {featuredEngagements.map((e) => (
+            <SelectedEngagement key={e.index} engagement={e} />
+          ))}
+        </div>
+
+        <div className="mx-auto max-w-content px-6 pt-16 md:pt-24">
+          <p className="eyebrow text-brand">Additional Engagements</p>
+          <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-bone md:text-3xl">
+            Selected work across finance, AI and operations
+          </h2>
+        </div>
+
+        <div className="mx-auto max-w-content px-6 pt-8">
+          {additionalEngagements.map((item) => (
+            <EngagementRow key={item.index} item={item} />
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  // Homepage compact preview
   return (
     <section className={cn('py-16 md:py-24', className)}>
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className={cn(fullPage ? "text-4xl md:text-5xl" : "text-3xl md:text-4xl", "font-bold text-bone mb-6")}>
-            {fullPage ? 'My Portfolio' : 'My Work'}
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-bone mb-6">My Work</h2>
           <p className="text-xl text-fog max-w-3xl mx-auto">
             A selection of my most impactful projects and initiatives that have driven measurable business results.
           </p>
-          
-          {fullPage && (
-            <div className="flex flex-wrap justify-center gap-3 mt-8">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={cn(
-                    'px-4 py-2 rounded-full transition-all',
-                    activeCategory === category
-                      ? 'bg-brand text-white'
-                      : 'bg-surface text-bone/90 hover:bg-surface'
-                  )}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {displayedProjects.map((project, index) => (
-            <div 
-              key={project.id} 
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
               className="animate-fade-in"
               style={{ animationDelay: `${0.2 + index * 0.1}s` }}
             >
@@ -201,21 +150,19 @@ const PortfolioSection = ({ className, fullPage = false, showCaseStudy }: Portfo
                 category={project.category}
                 image={project.image}
                 tech={project.tech}
-                previewUrl={project.previewUrl}
-                caseStudy={project.caseStudy}
-                trending={project.trending}
+                previewUrl={(project as any).previewUrl}
+                caseStudy={(project as any).caseStudy}
+                trending={(project as any).trending}
               />
             </div>
           ))}
         </div>
 
-        {!fullPage && (
-          <div className="text-center mt-12">
-            <Button variant="outline" href="/portfolio" icon="arrow">
-              View All Projects
-            </Button>
-          </div>
-        )}
+        <div className="text-center mt-12">
+          <Button variant="outline" href="/portfolio" icon="arrow">
+            View All Projects
+          </Button>
+        </div>
       </div>
     </section>
   );
