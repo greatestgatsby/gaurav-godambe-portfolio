@@ -24,9 +24,9 @@ const Portfolio = () => {
       <main className="flex-grow pt-20">
         {!caseStudyId && (
           <PageHeader
-            eyebrow="Selected work"
-            title="Portfolio"
-            subtitle="Problems diagnosed, systems shipped — across finance, AI agents, and operations."
+            eyebrow="Selected Work"
+            title="Selected Engagements"
+            subtitle="Real business problems. Practical AI. Measurable outcomes."
           />
         )}
         <PortfolioSection fullPage showCaseStudy={caseStudyId} />
